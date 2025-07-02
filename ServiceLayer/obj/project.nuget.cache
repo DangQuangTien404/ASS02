@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "az/68VBF2SM=",
+  "dgSpecHash": "sYFrCy0Quqs=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\DangQuangTien_Se171443_A02\\ServiceLayer\\ServiceLayer.csproj",
+  "projectFilePath": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\ASS02\\ServiceLayer\\ServiceLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hiii\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Hiii\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
