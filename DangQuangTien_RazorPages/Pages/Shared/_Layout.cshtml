@@ -3,9 +3,6 @@
 @{
     var email = HttpContextAccessor.HttpContext?.Session.GetString("AccountEmail");
     var role = HttpContextAccessor.HttpContext?.Session.GetInt32("AccountRole");
-    bool isAdmin = role == 0;
-    bool isStaff = role == 1;
-    bool isLecturer = role == 2;
 }
 
 <!DOCTYPE html>
@@ -22,57 +19,35 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-page="/Index">News System</a>
+                <a class="navbar-brand" asp-page="/Index">DangQuangTien_RazorPages</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-page="/Index">Home</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-page="/News/Index">View News</a>
-                        </li>
-
-                        @if (isStaff)
+                        <li class="nav-item"><a class="nav-link text-dark" asp-page="/Index">Home</a></li>
+                        @if (role == 1)
                         {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-page="/Category/Index">Categories</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-success fw-bold" asp-page="/News/Create">+ New Article</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-primary" asp-page="/News/NewsHistory">My News</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-info" asp-page="/Account/Profile">My Profile</a>
-                            </li>
+                            <li class="nav-item"><a class="nav-link text-dark" asp-page="/Category/Index">Categories</a></li>
                         }
-
-                        @if (isAdmin)
+                        <li class="nav-item"><a class="nav-link text-dark" asp-page="/News/Index">View News</a></li>
+                        @if (role == 1)
                         {
-                            <li class="nav-item">
-                                <a class="nav-link text-danger fw-bold" asp-page="/Account/Index">Account Management</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-warning fw-bold" asp-page="/Report/Index">Reports</a>
-                            </li>
+                            <li class="nav-item"><a class="nav-link text-success fw-bold" asp-page="/News/Create">+ New Article</a></li>
+                            <li class="nav-item"><a class="nav-link text-primary" asp-page="/News/NewsHistory">My News</a></li>
+                            <li class="nav-item"><a class="nav-link text-info" asp-page="/Account/Profile">My Profile</a></li>
                         }
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-page="/Privacy">Privacy</a>
-                        </li>
+                        @if (role == 0)
+                        {
+                            <li class="nav-item"><a class="nav-link text-danger fw-bold" asp-page="/Account/Index">Account Management</a></li>
+                            <li class="nav-item"><a class="nav-link text-warning fw-bold" asp-page="/Report/Index">Reports</a></li>
+                        }
+                        <li class="nav-item"><a class="nav-link text-dark" asp-page="/Privacy">Privacy</a></li>
                     </ul>
-
                     <ul class="navbar-nav">
-                        @if (string.IsNullOrEmpty(email))
+                        @if (email == null)
                         {
-                            <li class="nav-item">
-                                <a class="nav-link" asp-page="/Account/Login">Login</a>
-                            </li>
+                            <li class="nav-item"><a class="nav-link" asp-page="/Account/Login">Login</a></li>
                         }
                         else
                         {
@@ -97,7 +72,7 @@
         <div class="container mb-3">
             <h5 class="mt-2">Live News Alerts</h5>
             <ul id="newsNotifications" class="list-group">
-                <!-- SignalR notifications -->
+                <!-- SignalR appends here -->
             </ul>
         </div>
     </header>
@@ -118,23 +93,15 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.0/signalr.min.js"></script>
     <script>
-        if (!window.signalRConnected) {
-            const connection = new signalR.HubConnectionBuilder()
+        if (typeof window.connection === "undefined") {
+            window.connection = new signalR.HubConnectionBuilder()
                 .withUrl("/newsHub")
                 .build();
 
-            connection.on("ReceiveNewArticle", function (title, url) {
-                console.log("[🔔 SignalR] New Article:", title);
-
-                const notificationList = document.getElementById("newsNotifications");
-                if (notificationList) {
-                    const li = document.createElement("li");
-                    li.className = "list-group-item";
-                    li.innerHTML = `<a href="${url}">${title}</a>`;
-                    notificationList.prepend(li);
-                }
+            window.connection.on("ReceiveNewArticle", function (title, url) {
+                console.log("📢 Article received via SignalR: " + title);
 
                 const tableBody = document.querySelector("table tbody");
                 if (tableBody) {
@@ -144,18 +111,13 @@
                         <td><em>Live</em></td>
                         <td>${new Date().toLocaleString()}</td>
                         <td>Active</td>
-                        <td><span class="badge bg-success">New</span></td>
+                        <td><span class="text-muted">—</span></td>
                     `;
                     tableBody.prepend(row);
                 }
             });
 
-            connection.start()
-                .then(() => {
-                    console.log("[✅ SignalR] Connected");
-                    window.signalRConnected = true;
-                })
-                .catch(err => console.error("SignalR connection failed:", err));
+            window.connection.start().catch(err => console.error("SignalR error:", err));
         }
     </script>
 

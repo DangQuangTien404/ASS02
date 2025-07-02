@@ -65,38 +65,70 @@
         }
     </tbody>
 </table>
+
 @section Scripts {
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+    <script src="~/js/signalr/dist/browser/signalr.js"></script>
     <script>
+        // Initialize SignalR connection
         const connection = new signalR.HubConnectionBuilder()
             .withUrl("/newsHub")
             .build();
 
-        connection.on("ReceiveNewArticle", function (title, url) {
-            console.log("📢 New article received: " + title);
+        // Handle notifications
+        connection.on("ReceiveNotification", function() {
+            // Get current filter values
+            const searchTerm = $("input[name='SearchTerm']").val();
+            const categoryId = $("select[name='SelectedCategoryId']").val();
+            const onlyActive = $("#OnlyActive").is(":checked");
 
-            const tableBody = document.querySelector("table tbody");
-            if (!tableBody) return;
+            // Make AJAX call to get updated data
+            $.ajax({
+                url: '/News/Index?handler=IndexPartial',
+                data: {
+                    SearchTerm: searchTerm,
+                    SelectedCategoryId: categoryId,
+                    OnlyActive: onlyActive
+                },
+                type: 'GET',
+                success: function(result) {
+                    // Replace table content with new data
+                    $("table.table-striped tbody").html(result);
 
-            const newRow = document.createElement("tr");
-            newRow.innerHTML = `
-                <td><a href="${url}">${title}</a></td>
-                <td><em>Live</em></td>
-                <td>${new Date().toLocaleString()}</td>
-                <td>Active</td>
-                <td>
-                    <span class="badge bg-success">Live</span>
-                </td>
-            `;
+                    // Show notification to user
+                    const toast = $('<div class="toast align-items-center text-white bg-success" role="alert" aria-live="assertive" aria-atomic="true">')
+                        .append('<div class="d-flex"><div class="toast-body">News articles have been updated!</div>' +
+                                '<button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button></div>')
+                        .appendTo($('body'));
 
-            tableBody.prepend(newRow); 
+                    // Show toast notification
+                    const bsToast = new bootstrap.Toast(toast, { delay: 3000 });
+                    bsToast.show();
+
+                    // Remove toast after it's hidden
+                    toast.on('hidden.bs.toast', function() {
+                        $(this).remove();
+                    });
+                }
+            });
         });
 
-        connection.start().catch(function (err) {
+        // Also handle the global ReceiveNewArticle event
+        connection.on("ReceiveNewArticle", function(title, url) {
+            // Update the news notifications area
+            const notification = $('<li class="list-group-item list-group-item-success animate__animated animate__fadeIn">')
+                .html(`<strong>${title}</strong> - <a href="${url}">View article</a>`);
+
+            $("#newsNotifications").prepend(notification);
+
+            // After 10 seconds, remove the highlight
+            setTimeout(() => {
+                notification.removeClass("list-group-item-success");
+            }, 10000);
+        });
+
+        // Start the connection
+        connection.start().catch(function(err) {
             console.error("SignalR connection failed:", err.toString());
         });
     </script>
 }
-
-
-

@@ -9,101 +9,105 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DangQuangTien_RazorPages
 build_property.RootNamespace = DangQuangTien_RazorPages
-build_property.ProjectDir = C:\Users\Hiii\Desktop\CODE\PRN222\code\DangQuangTien_Se171443_A02\DangQuangTien_RazorPages\
+build_property.ProjectDir = C:\Users\Hiii\Desktop\CODE\PRN222\DangQuangTien_Se171443_A02\DangQuangTien_RazorPages\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Hiii\Desktop\CODE\PRN222\code\DangQuangTien_Se171443_A02\DangQuangTien_RazorPages
+build_property.MSBuildProjectDirectory = C:\Users\Hiii\Desktop\CODE\PRN222\DangQuangTien_Se171443_A02\DangQuangTien_RazorPages
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Hiii/Desktop/CODE/PRN222/code/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/Account/AccessDenied.cshtml]
+[C:/Users/Hiii/Desktop/CODE/PRN222/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/Account/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hiii/Desktop/CODE/PRN222/code/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/Account/Index.cshtml]
+[C:/Users/Hiii/Desktop/CODE/PRN222/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/Account/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hiii/Desktop/CODE/PRN222/code/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/Account/Login.cshtml]
+[C:/Users/Hiii/Desktop/CODE/PRN222/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hiii/Desktop/CODE/PRN222/code/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/Account/Logout.cshtml]
+[C:/Users/Hiii/Desktop/CODE/PRN222/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hiii/Desktop/CODE/PRN222/code/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/Account/Profile.cshtml]
+[C:/Users/Hiii/Desktop/CODE/PRN222/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/Account/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hiii/Desktop/CODE/PRN222/code/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/Category/Create.cshtml]
+[C:/Users/Hiii/Desktop/CODE/PRN222/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/Category/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hiii/Desktop/CODE/PRN222/code/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/Category/Delete.cshtml]
+[C:/Users/Hiii/Desktop/CODE/PRN222/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/Category/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcnlcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hiii/Desktop/CODE/PRN222/code/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/Category/Edit.cshtml]
+[C:/Users/Hiii/Desktop/CODE/PRN222/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/Category/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcnlcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hiii/Desktop/CODE/PRN222/code/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/Category/Index.cshtml]
+[C:/Users/Hiii/Desktop/CODE/PRN222/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/Category/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hiii/Desktop/CODE/PRN222/code/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/Error.cshtml]
+[C:/Users/Hiii/Desktop/CODE/PRN222/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hiii/Desktop/CODE/PRN222/code/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/Index.cshtml]
+[C:/Users/Hiii/Desktop/CODE/PRN222/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hiii/Desktop/CODE/PRN222/code/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/News/Create.cshtml]
+[C:/Users/Hiii/Desktop/CODE/PRN222/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/News/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmV3c1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hiii/Desktop/CODE/PRN222/code/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/News/Delete.cshtml]
+[C:/Users/Hiii/Desktop/CODE/PRN222/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/News/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmV3c1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hiii/Desktop/CODE/PRN222/code/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/News/Edit.cshtml]
+[C:/Users/Hiii/Desktop/CODE/PRN222/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/News/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmV3c1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hiii/Desktop/CODE/PRN222/code/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/News/Index.cshtml]
+[C:/Users/Hiii/Desktop/CODE/PRN222/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/News/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmV3c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hiii/Desktop/CODE/PRN222/code/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/News/NewsHistory.cshtml]
+[C:/Users/Hiii/Desktop/CODE/PRN222/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/News/IndexPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmV3c1xJbmRleFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hiii/Desktop/CODE/PRN222/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/News/NewsHistory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmV3c1xOZXdzSGlzdG9yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hiii/Desktop/CODE/PRN222/code/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/Privacy.cshtml]
+[C:/Users/Hiii/Desktop/CODE/PRN222/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hiii/Desktop/CODE/PRN222/code/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/Report/Index.cshtml]
+[C:/Users/Hiii/Desktop/CODE/PRN222/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/Report/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hiii/Desktop/CODE/PRN222/code/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Hiii/Desktop/CODE/PRN222/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hiii/Desktop/CODE/PRN222/code/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/_ViewImports.cshtml]
+[C:/Users/Hiii/Desktop/CODE/PRN222/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hiii/Desktop/CODE/PRN222/code/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/_ViewStart.cshtml]
+[C:/Users/Hiii/Desktop/CODE/PRN222/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hiii/Desktop/CODE/PRN222/code/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/Shared/_Layout.cshtml]
+[C:/Users/Hiii/Desktop/CODE/PRN222/DangQuangTien_Se171443_A02/DangQuangTien_RazorPages/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-o0olu1tbiy

@@ -6,16 +6,16 @@ namespace DangQuangTien_RazorPages
 {
     public class NotificationService
     {
-        private readonly IHubContext<NewsHub> _hub;
+        private readonly IHubContext<NewsHub> _hubContext;
 
-        public NotificationService(IHubContext<NewsHub> hub)
+        public NotificationService(IHubContext<NewsHub> hubContext)
         {
-            _hub = hub;
+            _hubContext = hubContext;
         }
 
         public async Task NotifyAsync()
         {
-            await _hub.Clients.All.SendAsync("ReceiveNotification");
+            await _hubContext.Clients.All.SendAsync("ReceiveNotification");
         }
     }
 }

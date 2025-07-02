@@ -15,6 +15,7 @@ namespace DangQuangTien_RazorPages.Pages.News
         private readonly INewsService _news;
         private readonly ICategoryService _cats;
         private readonly NotificationService _notificationService;
+
         public CreateModel(INewsService news, ICategoryService cats, NotificationService notificationService)
         {
             _news = news;
@@ -64,8 +65,12 @@ namespace DangQuangTien_RazorPages.Pages.News
             Article.NewsStatus = true;
             Article.Headline ??= Article.NewsTitle ?? "Untitled";
 
+            // The CreateAsync method already persists changes, so no need to call SaveChangesAsync
             await _news.CreateAsync(Article, SelectedTagIds);
+            
+            // Send notification to all clients
             await _notificationService.NotifyAsync();
+
             return RedirectToPage("Index");
         }
     }
