@@ -1,0 +1,225 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\code\\DangQuangTien_Se171443_A02\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EC5FA743-7A84-4E98-AD65-E7EB8FD078FE}|DangQuangTien_RazorPages\\DangQuangTien_RazorPages.csproj|c:\\users\\hiii\\desktop\\code\\prn222\\code\\dangquangtien_se171443_a02\\dangquangtien_razorpages\\pages\\news\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EC5FA743-7A84-4E98-AD65-E7EB8FD078FE}|DangQuangTien_RazorPages\\DangQuangTien_RazorPages.csproj|solutionrelative:dangquangtien_razorpages\\pages\\news\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC5FA743-7A84-4E98-AD65-E7EB8FD078FE}|DangQuangTien_RazorPages\\DangQuangTien_RazorPages.csproj|c:\\users\\hiii\\desktop\\code\\prn222\\code\\dangquangtien_se171443_a02\\dangquangtien_razorpages\\pages\\news\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC5FA743-7A84-4E98-AD65-E7EB8FD078FE}|DangQuangTien_RazorPages\\DangQuangTien_RazorPages.csproj|solutionrelative:dangquangtien_razorpages\\pages\\news\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC5FA743-7A84-4E98-AD65-E7EB8FD078FE}|DangQuangTien_RazorPages\\DangQuangTien_RazorPages.csproj|c:\\users\\hiii\\desktop\\code\\prn222\\code\\dangquangtien_se171443_a02\\dangquangtien_razorpages\\pages\\news\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC5FA743-7A84-4E98-AD65-E7EB8FD078FE}|DangQuangTien_RazorPages\\DangQuangTien_RazorPages.csproj|solutionrelative:dangquangtien_razorpages\\pages\\news\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC5FA743-7A84-4E98-AD65-E7EB8FD078FE}|DangQuangTien_RazorPages\\DangQuangTien_RazorPages.csproj|c:\\users\\hiii\\desktop\\code\\prn222\\code\\dangquangtien_se171443_a02\\dangquangtien_razorpages\\pages\\news\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EC5FA743-7A84-4E98-AD65-E7EB8FD078FE}|DangQuangTien_RazorPages\\DangQuangTien_RazorPages.csproj|solutionrelative:dangquangtien_razorpages\\pages\\news\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC5FA743-7A84-4E98-AD65-E7EB8FD078FE}|DangQuangTien_RazorPages\\DangQuangTien_RazorPages.csproj|c:\\users\\hiii\\desktop\\code\\prn222\\code\\dangquangtien_se171443_a02\\dangquangtien_razorpages\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EC5FA743-7A84-4E98-AD65-E7EB8FD078FE}|DangQuangTien_RazorPages\\DangQuangTien_RazorPages.csproj|solutionrelative:dangquangtien_razorpages\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC5FA743-7A84-4E98-AD65-E7EB8FD078FE}|DangQuangTien_RazorPages\\DangQuangTien_RazorPages.csproj|c:\\users\\hiii\\desktop\\code\\prn222\\code\\dangquangtien_se171443_a02\\dangquangtien_razorpages\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC5FA743-7A84-4E98-AD65-E7EB8FD078FE}|DangQuangTien_RazorPages\\DangQuangTien_RazorPages.csproj|solutionrelative:dangquangtien_razorpages\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66D168C2-A8D4-4FB2-8E9C-B2FC210854B4}|ServiceLayer\\ServiceLayer.csproj|c:\\users\\hiii\\desktop\\code\\prn222\\code\\dangquangtien_se171443_a02\\servicelayer\\services\\services\\newsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66D168C2-A8D4-4FB2-8E9C-B2FC210854B4}|ServiceLayer\\ServiceLayer.csproj|solutionrelative:servicelayer\\services\\services\\newsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC5FA743-7A84-4E98-AD65-E7EB8FD078FE}|DangQuangTien_RazorPages\\DangQuangTien_RazorPages.csproj|c:\\users\\hiii\\desktop\\code\\prn222\\code\\dangquangtien_se171443_a02\\dangquangtien_razorpages\\newshub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC5FA743-7A84-4E98-AD65-E7EB8FD078FE}|DangQuangTien_RazorPages\\DangQuangTien_RazorPages.csproj|solutionrelative:dangquangtien_razorpages\\newshub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66D168C2-A8D4-4FB2-8E9C-B2FC210854B4}|ServiceLayer\\ServiceLayer.csproj|c:\\users\\hiii\\desktop\\code\\prn222\\code\\dangquangtien_se171443_a02\\servicelayer\\services\\interfaces\\inewsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66D168C2-A8D4-4FB2-8E9C-B2FC210854B4}|ServiceLayer\\ServiceLayer.csproj|solutionrelative:servicelayer\\services\\interfaces\\inewsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC5FA743-7A84-4E98-AD65-E7EB8FD078FE}|DangQuangTien_RazorPages\\DangQuangTien_RazorPages.csproj|c:\\users\\hiii\\desktop\\code\\prn222\\code\\dangquangtien_se171443_a02\\dangquangtien_razorpages\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC5FA743-7A84-4E98-AD65-E7EB8FD078FE}|DangQuangTien_RazorPages\\DangQuangTien_RazorPages.csproj|solutionrelative:dangquangtien_razorpages\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC5FA743-7A84-4E98-AD65-E7EB8FD078FE}|DangQuangTien_RazorPages\\DangQuangTien_RazorPages.csproj|c:\\users\\hiii\\desktop\\code\\prn222\\code\\dangquangtien_se171443_a02\\dangquangtien_razorpages\\pages\\news\\edit.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC5FA743-7A84-4E98-AD65-E7EB8FD078FE}|DangQuangTien_RazorPages\\DangQuangTien_RazorPages.csproj|solutionrelative:dangquangtien_razorpages\\pages\\news\\edit.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC5FA743-7A84-4E98-AD65-E7EB8FD078FE}|DangQuangTien_RazorPages\\DangQuangTien_RazorPages.csproj|c:\\users\\hiii\\desktop\\code\\prn222\\code\\dangquangtien_se171443_a02\\dangquangtien_razorpages\\pages\\news\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EC5FA743-7A84-4E98-AD65-E7EB8FD078FE}|DangQuangTien_RazorPages\\DangQuangTien_RazorPages.csproj|solutionrelative:dangquangtien_razorpages\\pages\\news\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 12,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\code\\DangQuangTien_Se171443_A02\\DangQuangTien_RazorPages\\Pages\\News\\Create.cshtml",
+              "RelativeDocumentMoniker": "DangQuangTien_RazorPages\\Pages\\News\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\code\\DangQuangTien_Se171443_A02\\DangQuangTien_RazorPages\\Pages\\News\\Create.cshtml",
+              "RelativeToolTip": "DangQuangTien_RazorPages\\Pages\\News\\Create.cshtml",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAQwC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-02T02:25:21.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "NewsHub.cs",
+              "DocumentMoniker": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\code\\DangQuangTien_Se171443_A02\\DangQuangTien_RazorPages\\NewsHub.cs",
+              "RelativeDocumentMoniker": "DangQuangTien_RazorPages\\NewsHub.cs",
+              "ToolTip": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\code\\DangQuangTien_Se171443_A02\\DangQuangTien_RazorPages\\NewsHub.cs",
+              "RelativeToolTip": "DangQuangTien_RazorPages\\NewsHub.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T15:29:10.473Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "NewsService.cs",
+              "DocumentMoniker": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\code\\DangQuangTien_Se171443_A02\\ServiceLayer\\Services\\Services\\NewsService.cs",
+              "RelativeDocumentMoniker": "ServiceLayer\\Services\\Services\\NewsService.cs",
+              "ToolTip": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\code\\DangQuangTien_Se171443_A02\\ServiceLayer\\Services\\Services\\NewsService.cs",
+              "RelativeToolTip": "ServiceLayer\\Services\\Services\\NewsService.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAawCoAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T15:28:38.059Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "INewsService.cs",
+              "DocumentMoniker": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\code\\DangQuangTien_Se171443_A02\\ServiceLayer\\Services\\Interfaces\\INewsService.cs",
+              "RelativeDocumentMoniker": "ServiceLayer\\Services\\Interfaces\\INewsService.cs",
+              "ToolTip": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\code\\DangQuangTien_Se171443_A02\\ServiceLayer\\Services\\Interfaces\\INewsService.cs",
+              "RelativeToolTip": "ServiceLayer\\Services\\Interfaces\\INewsService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T15:28:35.91Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\code\\DangQuangTien_Se171443_A02\\DangQuangTien_RazorPages\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "DangQuangTien_RazorPages\\Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\code\\DangQuangTien_Se171443_A02\\DangQuangTien_RazorPages\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "DangQuangTien_RazorPages\\Pages\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAQwJ4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-01T15:02:40.387Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\code\\DangQuangTien_Se171443_A02\\DangQuangTien_RazorPages\\Pages\\News\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "DangQuangTien_RazorPages\\Pages\\News\\Index.cshtml.cs",
+              "ToolTip": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\code\\DangQuangTien_Se171443_A02\\DangQuangTien_RazorPages\\Pages\\News\\Index.cshtml.cs",
+              "RelativeToolTip": "DangQuangTien_RazorPages\\Pages\\News\\Index.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T14:58:47.126Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Create.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\code\\DangQuangTien_Se171443_A02\\DangQuangTien_RazorPages\\Pages\\News\\Create.cshtml.cs",
+              "RelativeDocumentMoniker": "DangQuangTien_RazorPages\\Pages\\News\\Create.cshtml.cs",
+              "ToolTip": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\code\\DangQuangTien_Se171443_A02\\DangQuangTien_RazorPages\\Pages\\News\\Create.cshtml.cs",
+              "RelativeToolTip": "DangQuangTien_RazorPages\\Pages\\News\\Create.cshtml.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAuwEgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T14:53:42.102Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Edit.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\code\\DangQuangTien_Se171443_A02\\DangQuangTien_RazorPages\\Pages\\News\\Edit.cshtml.cs",
+              "RelativeDocumentMoniker": "DangQuangTien_RazorPages\\Pages\\News\\Edit.cshtml.cs",
+              "ToolTip": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\code\\DangQuangTien_Se171443_A02\\DangQuangTien_RazorPages\\Pages\\News\\Edit.cshtml.cs",
+              "RelativeToolTip": "DangQuangTien_RazorPages\\Pages\\News\\Edit.cshtml.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAswD8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T14:51:12.429Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\code\\DangQuangTien_Se171443_A02\\DangQuangTien_RazorPages\\Pages\\News\\Edit.cshtml",
+              "RelativeDocumentMoniker": "DangQuangTien_RazorPages\\Pages\\News\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\code\\DangQuangTien_Se171443_A02\\DangQuangTien_RazorPages\\Pages\\News\\Edit.cshtml",
+              "RelativeToolTip": "DangQuangTien_RazorPages\\Pages\\News\\Edit.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-01T14:51:09.484Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "NotificationService.cs",
+              "DocumentMoniker": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\code\\DangQuangTien_Se171443_A02\\DangQuangTien_RazorPages\\NotificationService.cs",
+              "RelativeDocumentMoniker": "DangQuangTien_RazorPages\\NotificationService.cs",
+              "ToolTip": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\code\\DangQuangTien_Se171443_A02\\DangQuangTien_RazorPages\\NotificationService.cs",
+              "RelativeToolTip": "DangQuangTien_RazorPages\\NotificationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T14:48:38.761Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\code\\DangQuangTien_Se171443_A02\\DangQuangTien_RazorPages\\Pages\\News\\Index.cshtml",
+              "RelativeDocumentMoniker": "DangQuangTien_RazorPages\\Pages\\News\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\code\\DangQuangTien_Se171443_A02\\DangQuangTien_RazorPages\\Pages\\News\\Index.cshtml",
+              "RelativeToolTip": "DangQuangTien_RazorPages\\Pages\\News\\Index.cshtml",
+              "ViewState": "AgIAADoAAAAAAAAAAAAQwFsAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-01T14:41:22.833Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\code\\DangQuangTien_Se171443_A02\\DangQuangTien_RazorPages\\Program.cs",
+              "RelativeDocumentMoniker": "DangQuangTien_RazorPages\\Program.cs",
+              "ToolTip": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\code\\DangQuangTien_Se171443_A02\\DangQuangTien_RazorPages\\Program.cs",
+              "RelativeToolTip": "DangQuangTien_RazorPages\\Program.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAgwEcAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T14:39:20.363Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

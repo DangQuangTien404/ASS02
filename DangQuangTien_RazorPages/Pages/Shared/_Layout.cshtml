@@ -1,0 +1,164 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    var email = HttpContextAccessor.HttpContext?.Session.GetString("AccountEmail");
+    var role = HttpContextAccessor.HttpContext?.Session.GetInt32("AccountRole");
+    bool isAdmin = role == 0;
+    bool isStaff = role == 1;
+    bool isLecturer = role == 2;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DangQuangTien_RazorPages</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/DangQuangTien_RazorPages.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-page="/Index">News System</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-page="/Index">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-page="/News/Index">View News</a>
+                        </li>
+
+                        @if (isStaff)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-page="/Category/Index">Categories</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-success fw-bold" asp-page="/News/Create">+ New Article</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-primary" asp-page="/News/NewsHistory">My News</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-info" asp-page="/Account/Profile">My Profile</a>
+                            </li>
+                        }
+
+                        @if (isAdmin)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-danger fw-bold" asp-page="/Account/Index">Account Management</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-warning fw-bold" asp-page="/Report/Index">Reports</a>
+                            </li>
+                        }
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-page="/Privacy">Privacy</a>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav">
+                        @if (string.IsNullOrEmpty(email))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-page="/Account/Login">Login</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button" data-bs-toggle="dropdown">
+                                    👤 @email
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <form method="post" asp-page="/Account/Logout" class="dropdown-item m-0 p-0">
+                                            <button type="submit" class="btn btn-link text-start w-100 dropdown-item">Logout</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mb-3">
+            <h5 class="mt-2">Live News Alerts</h5>
+            <ul id="newsNotifications" class="list-group">
+                <!-- SignalR notifications -->
+            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - DangQuangTien_RazorPages - <a asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+    <script>
+        if (!window.signalRConnected) {
+            const connection = new signalR.HubConnectionBuilder()
+                .withUrl("/newsHub")
+                .build();
+
+            connection.on("ReceiveNewArticle", function (title, url) {
+                console.log("[🔔 SignalR] New Article:", title);
+
+                const notificationList = document.getElementById("newsNotifications");
+                if (notificationList) {
+                    const li = document.createElement("li");
+                    li.className = "list-group-item";
+                    li.innerHTML = `<a href="${url}">${title}</a>`;
+                    notificationList.prepend(li);
+                }
+
+                const tableBody = document.querySelector("table tbody");
+                if (tableBody) {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td><a href="${url}">${title}</a></td>
+                        <td><em>Live</em></td>
+                        <td>${new Date().toLocaleString()}</td>
+                        <td>Active</td>
+                        <td><span class="badge bg-success">New</span></td>
+                    `;
+                    tableBody.prepend(row);
+                }
+            });
+
+            connection.start()
+                .then(() => {
+                    console.log("[✅ SignalR] Connected");
+                    window.signalRConnected = true;
+                })
+                .catch(err => console.error("SignalR connection failed:", err));
+        }
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

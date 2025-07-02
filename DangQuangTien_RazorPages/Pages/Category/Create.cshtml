@@ -1,0 +1,37 @@
+﻿@page
+@model DangQuangTien_RazorPages.Pages.Category.CreateModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h2>New Category</h2>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+    <div class="mb-3">
+        <label asp-for="Category.CategoryName" class="form-label"></label>
+        <input asp-for="Category.CategoryName" class="form-control" />
+        <span asp-validation-for="Category.CategoryName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Category.CategoryDesciption" class="form-label"></label>
+        <textarea asp-for="Category.CategoryDesciption" class="form-control"></textarea>
+        <span asp-validation-for="Category.CategoryDesciption" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Category.IsActive" class="form-label"></label>
+        <input asp-for="Category.IsActive"
+               class="form-control"
+               style="width: 100px; display: inline-block;"
+               placeholder="true/false" />
+        <span asp-validation-for="Category.IsActive" class="text-danger"></span>
+    </div>
+
+
+    <button type="submit" class="btn btn-success">Create</button>
+    <a asp-page="Index" class="btn btn-secondary">Cancel</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

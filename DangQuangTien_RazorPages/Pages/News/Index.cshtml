@@ -1,0 +1,102 @@
+﻿@page
+@model DangQuangTien_RazorPages.Pages.News.IndexModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h1>News</h1>
+
+<form method="get" class="row g-2 align-items-center mb-4">
+    <div class="col-auto">
+        <input type="text" name="SearchTerm" value="@Model.SearchTerm" class="form-control" placeholder="Search titles..." />
+    </div>
+    <div class="col-auto">
+        <select name="SelectedCategoryId" class="form-select">
+            <option value="">-- All Categories --</option>
+            @foreach (var cat in Model.Categories)
+            {
+                <option value="@cat.CategoryId" selected="@(cat.CategoryId == Model.SelectedCategoryId)">
+                    @cat.CategoryName
+                </option>
+            }
+        </select>
+    </div>
+    <div class="col-auto form-check mt-2">
+        <input asp-for="OnlyActive" class="form-check-input" />
+        <label asp-for="OnlyActive" class="form-check-label">Active only</label>
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary">Filter</button>
+    </div>
+</form>
+
+@if (Model.CanEdit)
+{
+    <a asp-page="Create" class="btn btn-success mb-3">New Article</a>
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Date</th>
+            <th>Status</th>
+            @if (Model.CanEdit)
+            {
+                <th>Actions</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var article in Model.Articles)
+        {
+            <tr>
+                <td>@article.NewsTitle</td>
+                <td>@article.Category?.CategoryName</td>
+                <td>@article.CreatedDate?.ToString("g")</td>
+                <td>@(article.NewsStatus == true ? "Active" : "Inactive")</td>
+                @if (Model.CanEdit)
+                {
+                    <td>
+                        <a asp-page="Edit" asp-route-id="@article.NewsArticleId" class="btn btn-warning btn-sm">Edit</a>
+                        <a asp-page="Delete" asp-route-id="@article.NewsArticleId" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+    <script>
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl("/newsHub")
+            .build();
+
+        connection.on("ReceiveNewArticle", function (title, url) {
+            console.log("📢 New article received: " + title);
+
+            const tableBody = document.querySelector("table tbody");
+            if (!tableBody) return;
+
+            const newRow = document.createElement("tr");
+            newRow.innerHTML = `
+                <td><a href="${url}">${title}</a></td>
+                <td><em>Live</em></td>
+                <td>${new Date().toLocaleString()}</td>
+                <td>Active</td>
+                <td>
+                    <span class="badge bg-success">Live</span>
+                </td>
+            `;
+
+            tableBody.prepend(newRow); 
+        });
+
+        connection.start().catch(function (err) {
+            console.error("SignalR connection failed:", err.toString());
+        });
+    </script>
+}
+
+
+
