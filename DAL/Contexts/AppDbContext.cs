@@ -37,7 +37,6 @@ public partial class AppDbContext : DbContext
         }
     }
 
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Category>(entity =>

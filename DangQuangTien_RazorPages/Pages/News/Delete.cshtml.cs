@@ -10,10 +10,11 @@ namespace DangQuangTien_RazorPages.Pages.News
     public class DeleteModel : PageModel
     {
         private readonly INewsService _news;
-
-        public DeleteModel(INewsService news)
+        private readonly NotificationService _notificationService;
+        public DeleteModel(INewsService news, NotificationService notificationService)
         {
             _news = news;
+            _notificationService = notificationService;
         }
 
         [BindProperty]
@@ -37,6 +38,7 @@ namespace DangQuangTien_RazorPages.Pages.News
                 return NotFound();
 
             await _news.DeleteAsync(Article.NewsArticleId);
+            await _notificationService.NotifyAsync();
             return RedirectToPage("Index");
         }
     }
