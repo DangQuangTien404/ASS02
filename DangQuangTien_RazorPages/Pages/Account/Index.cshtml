@@ -5,13 +5,14 @@
 }
 
 <h1>Account Management</h1>
-<a asp-page="Create" class="btn btn-primary mb-3">New Account</a>
+<button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#createModal">New Account</button>
 
 <table class="table table-bordered table-hover table-striped mt-3">
     <thead class="table-light">
         <tr>
             <th>Email</th>
             <th>Role</th>
+            <th></th>
             <th></th>
         </tr>
     </thead>
@@ -30,6 +31,12 @@
                 <td>
                     @if (acc.AccountId != 0)
                     {
+                        <button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#editModal" data-id="@acc.AccountId" data-email="@acc.AccountEmail" data-name="@acc.AccountName" data-role="@acc.AccountRole">Edit</button>
+                    }
+                </td>
+                <td>
+                    @if (acc.AccountId != 0)
+                    {
                         <a asp-page="Delete" asp-route-id="@acc.AccountId" class="btn btn-sm btn-danger">Delete</a>
                     }
                 </td>
@@ -37,3 +44,102 @@
         }
     </tbody>
 </table>
+
+<div class="modal fade" id="createModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">New Account</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="createForm" method="post" asp-page-handler="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                    <div class="mb-3">
+                        <label asp-for="NewAccount.AccountName" class="form-label"></label>
+                        <input asp-for="NewAccount.AccountName" class="form-control" />
+                        <span asp-validation-for="NewAccount.AccountName" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="NewAccount.AccountEmail" class="form-label"></label>
+                        <input asp-for="NewAccount.AccountEmail" class="form-control" />
+                        <span asp-validation-for="NewAccount.AccountEmail" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="NewAccount.AccountPassword" class="form-label"></label>
+                        <input asp-for="NewAccount.AccountPassword" type="password" class="form-control" />
+                        <span asp-validation-for="NewAccount.AccountPassword" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="NewAccount.AccountRole" class="form-label"></label>
+                        <select asp-for="NewAccount.AccountRole" class="form-select">
+                            <option value="1">Staff</option>
+                            <option value="2">Lecturer</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" form="createForm" class="btn btn-success">Create</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Account</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editForm" method="post" asp-page-handler="Edit">
+                    <input type="hidden" asp-for="EditAccount.AccountId" />
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                    <div class="mb-3">
+                        <label asp-for="EditAccount.AccountName" class="form-label"></label>
+                        <input asp-for="EditAccount.AccountName" class="form-control" />
+                        <span asp-validation-for="EditAccount.AccountName" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="EditAccount.AccountEmail" class="form-label"></label>
+                        <input asp-for="EditAccount.AccountEmail" class="form-control" />
+                        <span asp-validation-for="EditAccount.AccountEmail" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="EditAccount.AccountPassword" class="form-label"></label>
+                        <input asp-for="EditAccount.AccountPassword" type="password" class="form-control" />
+                        <span asp-validation-for="EditAccount.AccountPassword" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="EditAccount.AccountRole" class="form-label"></label>
+                        <select asp-for="EditAccount.AccountRole" class="form-select">
+                            <option value="1">Staff</option>
+                            <option value="2">Lecturer</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" form="editForm" class="btn btn-success">Save</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        const editModal = document.getElementById('editModal');
+        editModal.addEventListener('show.bs.modal', event => {
+            const button = event.relatedTarget;
+            document.getElementById('EditAccount_AccountId').value = button.getAttribute('data-id');
+            document.getElementById('EditAccount_AccountEmail').value = button.getAttribute('data-email');
+            document.getElementById('EditAccount_AccountName').value = button.getAttribute('data-name');
+            document.getElementById('EditAccount_AccountRole').value = button.getAttribute('data-role');
+        });
+    </script>
+}

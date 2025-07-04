@@ -16,6 +16,12 @@ namespace DangQuangTien_RazorPages.Pages.Account
 
         public List<SystemAccount> Accounts { get; set; }
 
+        [BindProperty]
+        public SystemAccount NewAccount { get; set; } = new SystemAccount();
+
+        [BindProperty]
+        public SystemAccount EditAccount { get; set; } = new SystemAccount();
+
         public IActionResult OnGet()
         {
             var email = HttpContext.Session.GetString("AccountEmail");
@@ -29,6 +35,38 @@ namespace DangQuangTien_RazorPages.Pages.Account
 
             Accounts = _accountService.GetAllAccounts().ToList();
             return Page();
+        }
+
+        public async Task<IActionResult> OnPostCreateAsync()
+        {
+            var role = HttpContext.Session.GetInt32("AccountRole");
+            if (role != 0)
+                return RedirectToPage("/Account/AccessDenied");
+
+            if (!ModelState.IsValid)
+            {
+                Accounts = _accountService.GetAllAccounts().ToList();
+                return Page();
+            }
+
+            await _accountService.AddAsync(NewAccount);
+            return RedirectToPage();
+        }
+
+        public async Task<IActionResult> OnPostEditAsync()
+        {
+            var role = HttpContext.Session.GetInt32("AccountRole");
+            if (role != 0)
+                return RedirectToPage("/Account/AccessDenied");
+
+            if (!ModelState.IsValid)
+            {
+                Accounts = _accountService.GetAllAccounts().ToList();
+                return Page();
+            }
+
+            await _accountService.UpdateAsync(EditAccount);
+            return RedirectToPage();
         }
     }
 }
