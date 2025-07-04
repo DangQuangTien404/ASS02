@@ -42,21 +42,14 @@ namespace DangQuangTien_RazorPages.Pages.News
         {
             var role = HttpContext.Session.GetInt32("AccountRole");
 
-            if (role == null)
-                return RedirectToPage("/Account/Login");
-
-            if (role == 2)
-            {
-                OnlyActive = true;
-                CanEdit = false;
-            }
-            else if (role == 1)
+            if (role == 1) // Staff can edit
             {
                 CanEdit = true;
             }
-            else
+            else // Lecturer, Admin or anonymous users
             {
-                return Forbid();
+                OnlyActive = true;
+                CanEdit = false;
             }
 
             Categories = (await categoryRepo.GetAllAsync()).ToList();
@@ -68,10 +61,18 @@ namespace DangQuangTien_RazorPages.Pages.News
 
         public async Task<IActionResult> OnGetIndexPartial(string SearchTerm, int? SelectedCategoryId, bool OnlyActive)
         {
+            var role = HttpContext.Session.GetInt32("AccountRole");
+
             // Set properties so they can be used in filtering
             this.SearchTerm = SearchTerm;
             this.SelectedCategoryId = SelectedCategoryId;
             this.OnlyActive = OnlyActive;
+
+            if (role != 1)
+            {
+                // Visitors and lecturers should only see active articles
+                this.OnlyActive = true;
+            }
 
             // Re-use the same logic from OnGetAsync but without the Category loading
             await LoadArticles();

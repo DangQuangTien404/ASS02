@@ -47,5 +47,11 @@ namespace ServiceLayer.Services
         public Task UpdateAsync(SystemAccount account)
             => _repo.UpdateAsync(account);
 
+        public Task AddAsync(SystemAccount account)
+            => _repo.AddAsync(account);
+
+        public Task DeleteAsync(short id)
+            => _repo.DeleteAsync(id);
+
     }
 }
