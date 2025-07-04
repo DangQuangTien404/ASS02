@@ -40,5 +40,21 @@ namespace DAL.Repositories
             await _ctx.SaveChangesAsync();
         }
 
+        public async Task AddAsync(SystemAccount account)
+        {
+            await _ctx.SystemAccount.AddAsync(account);
+            await _ctx.SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync(short id)
+        {
+            var existing = await _ctx.SystemAccount.FindAsync(id);
+            if (existing != null)
+            {
+                _ctx.SystemAccount.Remove(existing);
+                await _ctx.SaveChangesAsync();
+            }
+        }
+
     }
 }
