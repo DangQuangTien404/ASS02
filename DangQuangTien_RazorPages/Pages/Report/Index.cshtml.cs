@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DAL.Entities;
-using DAL.Repositories;
+using ServiceLayer.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -12,11 +12,11 @@ namespace DangQuangTien_RazorPages.Pages.Report
 {
     public class IndexModel : PageModel
     {
-        private readonly INewsArticleRepository _newsRepo;
+        private readonly INewsService _news;
 
-        public IndexModel(INewsArticleRepository newsRepo)
+        public IndexModel(INewsService news)
         {
-            _newsRepo = newsRepo;
+            _news = news;
         }
 
         [BindProperty(SupportsGet = true)]
@@ -33,7 +33,7 @@ namespace DangQuangTien_RazorPages.Pages.Report
             if (role == null || role != 0)
                 return RedirectToPage("/Account/Login");
 
-            var allNews = await _newsRepo.GetAllAsync(null);
+            var allNews = await _news.GetAllAsync();
 
             NewsStats = allNews
                 .Where(n =>
