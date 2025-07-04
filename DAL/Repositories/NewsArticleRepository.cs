@@ -55,16 +55,21 @@ namespace DAL.Repositories
 
             var existingTagIds = article.Tag.Select(t => t.TagId).ToHashSet();
 
-            var tagsToAdd = await _ctx.Tag
-                .Where(t => tagIds.Except(existingTagIds).Contains(t.TagId))
-                .ToListAsync();
+            var newTagIds = tagIds.Except(existingTagIds).ToList();
 
-            foreach (var tag in tagsToAdd)
+            if (newTagIds.Count > 0)
             {
-                article.Tag.Add(tag);
-            }
+                var tagsToAdd = await _ctx.Tag
+                    .Where(t => newTagIds.Contains(t.TagId))
+                    .ToListAsync();
 
-            await _ctx.SaveChangesAsync();
+                foreach (var tag in tagsToAdd)
+                {
+                    article.Tag.Add(tag);
+                }
+
+                await _ctx.SaveChangesAsync();
+            }
         }
 
         public async Task RemoveAllTagsFromArticleAsync(string newsArticleId)
