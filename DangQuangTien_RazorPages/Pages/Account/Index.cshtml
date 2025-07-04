@@ -5,7 +5,16 @@
 }
 
 <h1>Account Management</h1>
-<a asp-page="Create" class="btn btn-primary mb-3" data-popup="create">New Account</a>
+
+<form method="get" class="row mb-3">
+    <div class="col-auto">
+        <input asp-for="SearchTerm" class="form-control" placeholder="Search..." />
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary">Search</button>
+        <a asp-page="Create" class="btn btn-success" data-popup="create">New Account</a>
+    </div>
+</form>
 
 <table class="table table-bordered table-hover table-striped mt-3">
     <thead class="table-light">
@@ -30,7 +39,7 @@
                 <td>
                     @if (acc.AccountId != 0)
                     {
-                        <a asp-page="Edit" asp-route-id="@acc.AccountId" class="btn btn-sm btn-warning me-1">Edit</a>
+                        <a asp-page="Edit" asp-route-id="@acc.AccountId" class="btn btn-sm btn-warning me-1" data-popup="edit">Edit</a>
                         <a asp-page="Delete" asp-route-id="@acc.AccountId" class="btn btn-sm btn-danger" data-confirm="Are you sure you want to delete this account?">Delete</a>
                     }
                 </td>
