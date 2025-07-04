@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using DAL.Entities;
-using DAL.Repositories;
+using ServiceLayer.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -13,13 +13,13 @@ namespace DangQuangTien_RazorPages.Pages.News
 {
     public class IndexModel : PageModel
     {
-        private readonly INewsArticleRepository newsRepo;
-        private readonly ICategoryRepository categoryRepo;
+        private readonly INewsService _news;
+        private readonly ICategoryService _cats;
         private readonly NotificationService _notificationService;
-        public IndexModel(INewsArticleRepository newsRepo, ICategoryRepository categoryRepo, NotificationService notificationService)
+        public IndexModel(INewsService news, ICategoryService cats, NotificationService notificationService)
         {
-            this.newsRepo = newsRepo;
-            this.categoryRepo = categoryRepo;
+            _news = news;
+            _cats = cats;
             _notificationService = notificationService;
         }
 
@@ -52,7 +52,7 @@ namespace DangQuangTien_RazorPages.Pages.News
                 CanEdit = false;
             }
 
-            Categories = (await categoryRepo.GetAllAsync()).ToList();
+            Categories = (await _cats.GetAllAsync()).ToList();
 
             await LoadArticles();
 
@@ -83,14 +83,11 @@ namespace DangQuangTien_RazorPages.Pages.News
 
         private async Task LoadArticles()
         {
-            var articles = (await newsRepo.GetAllAsync(SearchTerm)).AsQueryable();
-            
+            var articles = (await _news.GetAllAsync(SearchTerm, OnlyActive)).AsQueryable();
+
             if (SelectedCategoryId.HasValue)
                 articles = articles.Where(a => a.CategoryId == SelectedCategoryId);
-            
-            if (OnlyActive)
-                articles = articles.Where(a => a.NewsStatus == true);
-            
+
             Articles = articles.OrderByDescending(a => a.CreatedDate).ToList();
         }
     }
