@@ -32,10 +32,18 @@ namespace DAL.Repositories
             if (existing == null)
                 throw new DbUpdateConcurrencyException("Account no longer exists.");
 
-            // Update only fields allowed to change
+            // Fields always editable by the owner
             existing.AccountName = updated.AccountName;
             existing.AccountPassword = updated.AccountPassword;
-            // Avoid changing Email or Role unless admin context
+
+            // Email and role can only be modified by an admin. The calling
+            // code for admin edits supplies the new values whereas profile
+            // updates reuse the existing entity so these remain unchanged.
+            if (existing.AccountEmail != updated.AccountEmail)
+                existing.AccountEmail = updated.AccountEmail;
+
+            if (existing.AccountRole != updated.AccountRole)
+                existing.AccountRole = updated.AccountRole;
 
             await _ctx.SaveChangesAsync();
         }
