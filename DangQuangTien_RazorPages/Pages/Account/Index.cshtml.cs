@@ -14,6 +14,9 @@ namespace DangQuangTien_RazorPages.Pages.Account
             _accountService = accountService;
         }
 
+        [BindProperty(SupportsGet = true)]
+        public string? SearchTerm { get; set; }
+
         public List<SystemAccount> Accounts { get; set; }
 
         public IActionResult OnGet()
@@ -27,7 +30,18 @@ namespace DangQuangTien_RazorPages.Pages.Account
             if (role != 0)
                 return RedirectToPage("/Account/AccessDenied");
 
-            Accounts = _accountService.GetAllAccounts().ToList();
+            var all = _accountService.GetAllAccounts();
+
+            if (!string.IsNullOrWhiteSpace(SearchTerm))
+            {
+                var term = SearchTerm.Trim().ToLower();
+                all = all.Where(a =>
+                    (!string.IsNullOrEmpty(a.AccountName) && a.AccountName.ToLower().Contains(term)) ||
+                    (!string.IsNullOrEmpty(a.AccountEmail) && a.AccountEmail.ToLower().Contains(term))
+                );
+            }
+
+            Accounts = all.ToList();
             return Page();
         }
     }
