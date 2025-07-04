@@ -5,12 +5,14 @@
 }
 
 <h1>Account Management</h1>
+<a asp-page="Create" class="btn btn-primary mb-3">New Account</a>
 
 <table class="table table-bordered table-hover table-striped mt-3">
     <thead class="table-light">
         <tr>
             <th>Email</th>
             <th>Role</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -24,6 +26,12 @@
                                     acc.AccountRole == 2 ? "Lecturer" :
                                     "Unknown")
 
+                </td>
+                <td>
+                    @if (acc.AccountId != 0)
+                    {
+                        <a asp-page="Delete" asp-route-id="@acc.AccountId" class="btn btn-sm btn-danger">Delete</a>
+                    }
                 </td>
             </tr>
         }
