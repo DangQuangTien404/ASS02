@@ -20,7 +20,6 @@ namespace DangQuangTien_RazorPages.Pages.Account
             var id = HttpContext.Session.GetInt32("AccountId");
             var role = HttpContext.Session.GetInt32("AccountRole");
 
-            // ✅ Staff only
             if (id == null || role != 1)
                 return RedirectToPage("/Account/AccessDenied");
 
@@ -47,7 +46,6 @@ namespace DangQuangTien_RazorPages.Pages.Account
             if (existing == null)
                 return RedirectToPage("/Account/Login");
 
-            // Preserve email + unchanged values
             existing.AccountName = string.IsNullOrWhiteSpace(Account.AccountName)
                                     ? existing.AccountName
                                     : Account.AccountName;

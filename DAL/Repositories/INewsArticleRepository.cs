@@ -13,7 +13,6 @@ namespace DAL.Repositories
         void Remove(NewsArticle entity);
         Task SaveChangesAsync();
 
-        // many‐to‐many helpers
         Task AddTagsToArticleAsync(string newsArticleId, IEnumerable<int> tagIds);
         Task RemoveAllTagsFromArticleAsync(string newsArticleId);
         Task<IEnumerable<Tag>> GetAllTagsAsync();

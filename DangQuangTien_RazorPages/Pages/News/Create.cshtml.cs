@@ -45,11 +45,6 @@ namespace DangQuangTien_RazorPages.Pages.News
 
         public async Task<IActionResult> OnPostAsync()
         {
-            //if (!ModelState.IsValid)
-            //{
-            //    await OnGetAsync();
-            //    return Page();
-            //}
 
             int? accountId = HttpContext.Session.GetInt32("AccountId");
             if (accountId == null)
