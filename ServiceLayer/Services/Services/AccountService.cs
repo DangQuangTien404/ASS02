@@ -25,7 +25,6 @@ namespace ServiceLayer.Services
         }
         public async Task<SystemAccount?> AuthenticateAsync(string email, string password)
         {
-            // 1) Check for Admin credentials from appsettings.json
             if (email == _admin.Email && password == _admin.Password)
             {
                 return new SystemAccount
@@ -38,7 +37,6 @@ namespace ServiceLayer.Services
                 };
             }
 
-            // 2) Otherwise fallback to DB (Staff=1, Lecturer=2)
             return await _repo.GetByEmailAndPasswordAsync(email, password);
         }
         public Task<SystemAccount?> GetByIdAsync(short id)

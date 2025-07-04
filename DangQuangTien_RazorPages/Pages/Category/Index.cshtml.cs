@@ -28,7 +28,7 @@ namespace DangQuangTien_RazorPages.Pages.Category
             if (UserRole == null)
                 return RedirectToPage("/Account/Login");
 
-            if (UserRole != 1) // Only Staff can access Category management
+            if (UserRole != 1)
                 return Forbid();
 
             Categories = await _svc.GetAllAsync(SearchTerm);

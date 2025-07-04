@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ServiceLayer.Interfaces;
 
-// ← Alias the scaffolded entity so “Category” in this file refers to the type
 using CategoryEntity = DAL.Entities.Category;
 
 namespace DangQuangTien_RazorPages.Pages.Category
@@ -16,7 +15,6 @@ namespace DangQuangTien_RazorPages.Pages.Category
         [BindProperty]
         public CategoryEntity Category { get; set; } = new CategoryEntity
         {
-            // default new categories to active
             IsActive = true
         };
 

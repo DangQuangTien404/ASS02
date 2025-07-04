@@ -11,7 +11,6 @@ namespace DangQuangTien_RazorPages.Pages.Category
         private readonly ICategoryService _svc;
         public DeleteModel(ICategoryService svc) => _svc = svc;
 
-        // make this nullable so we can detect “not found”
         [BindProperty]
         public CategoryEntity? Category { get; set; }
 
