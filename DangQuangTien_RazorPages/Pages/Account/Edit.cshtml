@@ -1,0 +1,43 @@
+@page "{id:int}"
+@model DangQuangTien_RazorPages.Pages.Account.EditModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h2>Edit Account</h2>
+
+<form method="post" data-confirm="Save changes to this account?">
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+    <input type="hidden" asp-for="Account.AccountId" />
+
+    <div class="mb-3">
+        <label asp-for="Account.AccountName" class="form-label"></label>
+        <input asp-for="Account.AccountName" class="form-control" />
+        <span asp-validation-for="Account.AccountName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Account.AccountEmail" class="form-label"></label>
+        <input asp-for="Account.AccountEmail" class="form-control" />
+        <span asp-validation-for="Account.AccountEmail" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Account.AccountPassword" class="form-label">New Password</label>
+        <input asp-for="Account.AccountPassword" class="form-control" type="password" placeholder="Leave blank to keep current" />
+        <span asp-validation-for="Account.AccountPassword" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Account.AccountRole" class="form-label"></label>
+        <select asp-for="Account.AccountRole" class="form-select">
+            <option value="1">Staff</option>
+            <option value="2">Lecturer</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-warning">Save</button>
+    <a asp-page="Index" class="btn btn-secondary">Cancel</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
