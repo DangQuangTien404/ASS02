@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ServiceLayer.Interfaces;
-using CategoryEntity = DAL.Entities.Category;
+using ServiceLayer.DTOs;
 
 namespace DangQuangTien_RazorPages.Pages.Category
 {
@@ -12,13 +12,24 @@ namespace DangQuangTien_RazorPages.Pages.Category
         public EditModel(ICategoryService svc) => _svc = svc;
 
         [BindProperty]
-        public CategoryEntity Category { get; set; } = new();
+        public UpdateCategoryDto Category { get; set; } = new()
+        {
+            CategoryName = string.Empty,
+            CategoryDesciption = string.Empty
+        };
 
         public async Task<IActionResult> OnGetAsync(short id)
         {
             var category = await _svc.GetByIdAsync(id);
             if (category == null) return RedirectToPage("Index");
-            Category = category;
+            Category = new UpdateCategoryDto
+            {
+                CategoryId = category.CategoryId,
+                CategoryName = category.CategoryName,
+                CategoryDesciption = category.CategoryDesciption,
+                ParentCategoryId = category.ParentCategoryId,
+                IsActive = category.IsActive
+            };
             return Page();
         }
 

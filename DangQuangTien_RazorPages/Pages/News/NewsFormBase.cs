@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ServiceLayer.Interfaces;
 using ServiceLayer.Services;
+using ServiceLayer.DTOs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

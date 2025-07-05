@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ServiceLayer.Interfaces;
-using CategoryEntity = DAL.Entities.Category;
+using ServiceLayer.DTOs;
 
 namespace DangQuangTien_RazorPages.Pages.Category
 {
@@ -12,7 +12,7 @@ namespace DangQuangTien_RazorPages.Pages.Category
         public DeleteModel(ICategoryService svc) => _svc = svc;
 
         [BindProperty]
-        public CategoryEntity? Category { get; set; }
+        public CategoryDto? Category { get; set; }
         public bool CanDelete { get; set; }
 
         public async Task<IActionResult> OnGetAsync(short id)
