@@ -303,3 +303,4 @@ C:\Users\Hiii\Desktop\CODE\PRN222\ASS02\DangQuangTien_RazorPages\obj\Debug\net8.
 C:\Users\Hiii\Desktop\CODE\PRN222\ASS02\DangQuangTien_RazorPages\obj\Debug\net8.0\DangQuangTien_RazorPages.pdb
 C:\Users\Hiii\Desktop\CODE\PRN222\ASS02\DangQuangTien_RazorPages\obj\Debug\net8.0\DangQuangTien_RazorPages.genruntimeconfig.cache
 C:\Users\Hiii\Desktop\CODE\PRN222\ASS02\DangQuangTien_RazorPages\obj\Debug\net8.0\ref\DangQuangTien_RazorPages.dll
+C:\Users\Hiii\Desktop\CODE\PRN222\ASS02\DangQuangTien_RazorPages\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
