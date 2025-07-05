@@ -297,7 +297,6 @@ C:\Users\Hiii\Desktop\CODE\PRN222\ASS02\DangQuangTien_RazorPages\obj\Debug\net8.
 C:\Users\Hiii\Desktop\CODE\PRN222\ASS02\DangQuangTien_RazorPages\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Users\Hiii\Desktop\CODE\PRN222\ASS02\DangQuangTien_RazorPages\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Hiii\Desktop\CODE\PRN222\ASS02\DangQuangTien_RazorPages\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\Hiii\Desktop\CODE\PRN222\ASS02\DangQuangTien_RazorPages\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\Hiii\Desktop\CODE\PRN222\ASS02\DangQuangTien_RazorPages\obj\Debug\net8.0\DangQuan.0437FA81.Up2Date
 C:\Users\Hiii\Desktop\CODE\PRN222\ASS02\DangQuangTien_RazorPages\obj\Debug\net8.0\DangQuangTien_RazorPages.dll
 C:\Users\Hiii\Desktop\CODE\PRN222\ASS02\DangQuangTien_RazorPages\obj\Debug\net8.0\refint\DangQuangTien_RazorPages.dll

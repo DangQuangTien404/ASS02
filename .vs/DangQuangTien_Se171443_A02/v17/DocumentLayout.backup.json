@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\ASS02\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}|.devcontainer{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}|C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\ASS02\\devcontainer.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}|.devcontainer{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}|solutionrelative:devcontainer.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EC5FA743-7A84-4E98-AD65-E7EB8FD078FE}|DangQuangTien_RazorPages\\DangQuangTien_RazorPages.csproj|c:\\users\\hiii\\desktop\\code\\prn222\\ass02\\dangquangtien_razorpages\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{EC5FA743-7A84-4E98-AD65-E7EB8FD078FE}|DangQuangTien_RazorPages\\DangQuangTien_RazorPages.csproj|solutionrelative:dangquangtien_razorpages\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -39,6 +43,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "devcontainer.json",
+              "DocumentMoniker": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\ASS02\\devcontainer.json",
+              "RelativeDocumentMoniker": "devcontainer.json",
+              "ToolTip": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\ASS02\\devcontainer.json",
+              "RelativeToolTip": "devcontainer.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-05T02:12:41.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\ASS02\\DangQuangTien_RazorPages\\appsettings.json",
               "RelativeDocumentMoniker": "DangQuangTien_RazorPages\\appsettings.json",
@@ -46,12 +63,11 @@
               "RelativeToolTip": "DangQuangTien_RazorPages\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-05T01:41:48.369Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-05T01:41:48.369Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Index.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\ASS02\\DangQuangTien_RazorPages\\Pages\\Report\\Index.cshtml.cs",
               "RelativeDocumentMoniker": "DangQuangTien_RazorPages\\Pages\\Report\\Index.cshtml.cs",
@@ -59,12 +75,11 @@
               "RelativeToolTip": "DangQuangTien_RazorPages\\Pages\\Report\\Index.cshtml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-05T01:28:51.51Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-05T01:28:51.51Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\ASS02\\DangQuangTien_RazorPages\\Pages\\News\\Index.cshtml.cs",
               "RelativeDocumentMoniker": "DangQuangTien_RazorPages\\Pages\\News\\Index.cshtml.cs",
@@ -76,7 +91,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "INewsService.cs",
               "DocumentMoniker": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\ASS02\\ServiceLayer\\Services\\Interfaces\\INewsService.cs",
               "RelativeDocumentMoniker": "ServiceLayer\\Services\\Interfaces\\INewsService.cs",

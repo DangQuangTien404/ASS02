@@ -1,0 +1,12 @@
+{
+  "name": "DotNet 8 Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/dotnet:8.0",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-dotnettools.csharp"
+      ]
+    }
+  },
+  "postCreateCommand": "dotnet restore DangQuangTien_Se171443_A02.sln"
+}
