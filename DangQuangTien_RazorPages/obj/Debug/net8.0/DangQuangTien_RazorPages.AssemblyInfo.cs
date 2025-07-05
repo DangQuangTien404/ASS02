@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DangQuangTien_RazorPages")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5bc58631d9eac385b8323d82897dfcc800cb588c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+840a83cab18da4db302b2863697a848edf99398a")]
 [assembly: System.Reflection.AssemblyProductAttribute("DangQuangTien_RazorPages")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DangQuangTien_RazorPages")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
