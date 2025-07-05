@@ -31,6 +31,9 @@ namespace ServiceLayer.Services
             await _repo.SaveChangesAsync();
         }
 
+        public Task<bool> HasArticlesAsync(short id)
+            => _repo.HasArticlesAsync(id);
+
         public async Task<bool> DeleteAsync(short id)
         {
             if (await _repo.HasArticlesAsync(id))

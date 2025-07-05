@@ -8,9 +8,18 @@
         <dd class="col-sm-10">@Model.Category?.CategoryDesciption</dd>
     </dl>
 </div>
-<form method="post" asp-page="Delete" asp-route-id="@Model.Category?.CategoryId">
-    <button type="submit" class="btn btn-danger">Delete</button>
-</form>
+@if (Model.CanDelete)
+{
+    <form method="post" asp-page="Delete" asp-route-id="@Model.Category?.CategoryId">
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+}
+else
+{
+    <div class="text-danger">
+        This category cannot be deleted because it is currently used in one or more news articles.
+    </div>
+}
 @if (!ViewData.ModelState.IsValid)
 {
     <div class="text-danger mt-3">

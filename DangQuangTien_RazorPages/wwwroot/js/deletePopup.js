@@ -50,6 +50,8 @@ document.addEventListener('submit', function (e) {
                     errorEl.textContent = data.error;
                     errorEl.classList.remove('d-none');
                 }
+                const btn = modalEl.querySelector('form button[type="submit"]');
+                if (btn) btn.remove();
             });
             return;
         }
