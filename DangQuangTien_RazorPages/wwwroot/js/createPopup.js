@@ -11,7 +11,7 @@ document.addEventListener('click', function (e) {
         .then(function (r) { return r.text(); })
         .then(function (html) {
             const modalEl = document.getElementById('createModal');
-            modalEl.querySelector('.modal-content').innerHTML = html;
+            modalEl.querySelector('.modal-body').innerHTML = html;
             const modal = new bootstrap.Modal(modalEl);
             modal.show();
         });
