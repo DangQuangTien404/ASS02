@@ -8,26 +8,12 @@ using ServiceLayer.Services;
 
 namespace DangQuangTien_RazorPages.Pages.News
 {
-    public class EditModel : PageModel
+    public class EditModel : NewsFormBase
     {
-        private readonly INewsService _news;
-        private readonly ICategoryService _cats;
-        private readonly NotificationService _notificationService;
         public EditModel(INewsService news, ICategoryService cats, NotificationService notificationService)
+            : base(news, cats, notificationService)
         {
-            _news = news;
-            _cats = cats;
-            _notificationService = notificationService;
         }
-
-        [BindProperty]
-        public NewsArticle Article { get; set; } = new();
-
-        [BindProperty]
-        public List<int> SelectedTagIds { get; set; } = new();
-
-        public IEnumerable<SelectListItem> CategoryList { get; set; } = Enumerable.Empty<SelectListItem>();
-        public IList<Tag> AllTags { get; set; } = new List<Tag>();
 
         public async Task<IActionResult> OnGetAsync(string id)
         {
@@ -41,9 +27,7 @@ namespace DangQuangTien_RazorPages.Pages.News
             Article = article;
             SelectedTagIds = article.Tag.Select(t => t.TagId).ToList();
 
-            var cats = await _cats.GetAllAsync();
-            CategoryList = cats.Select(c => new SelectListItem(c.CategoryName, c.CategoryId.ToString()));
-            AllTags = (await _news.GetAllTagsAsync()).ToList();
+            await LoadCategoriesAndTagsAsync();
 
             return Page();
         }

@@ -10,37 +10,16 @@ using System.Threading.Tasks;
 
 namespace DangQuangTien_RazorPages.Pages.News
 {
-    public class CreateModel : PageModel
+    public class CreateModel : NewsFormBase
     {
-        private readonly INewsService _news;
-        private readonly ICategoryService _cats;
-        private readonly NotificationService _notificationService;
-
         public CreateModel(INewsService news, ICategoryService cats, NotificationService notificationService)
+            : base(news, cats, notificationService)
         {
-            _news = news;
-            _cats = cats;
-            _notificationService = notificationService;
         }
-
-        [BindProperty]
-        public NewsArticle Article { get; set; } = new();
-
-        [BindProperty]
-        public List<int> SelectedTagIds { get; set; } = new();
-
-        public IEnumerable<SelectListItem> CategoryList { get; private set; }
-            = Enumerable.Empty<SelectListItem>();
-
-        public IList<Tag> AllTags { get; private set; } = new List<Tag>();
 
         public async Task OnGetAsync()
         {
-            var cats = await _cats.GetAllAsync();
-            CategoryList = cats
-              .Select(c => new SelectListItem(c.CategoryName, c.CategoryId.ToString()));
-
-            AllTags = (await _news.GetAllTagsAsync()).ToList();
+            await LoadCategoriesAndTagsAsync();
         }
 
         public async Task<IActionResult> OnGetFormAsync()
