@@ -14,15 +14,12 @@ namespace DangQuangTien_RazorPages.Pages.Category
         [BindProperty]
         public CategoryEntity? Category { get; set; }
 
-        public bool IsInUse { get; set; }
-
         public async Task<IActionResult> OnGetAsync(short id)
         {
             Category = await _svc.GetByIdAsync(id);
             if (Category == null) return RedirectToPage("Index");
 
-            IsInUse = await _svc.IsInUseAsync(id);
-            if (IsInUse)
+            if (await _svc.IsInUseAsync(id))
             {
                 ModelState.AddModelError(string.Empty,
                     "Cannot delete: this category is in use.");
@@ -44,7 +41,6 @@ namespace DangQuangTien_RazorPages.Pages.Category
             var success = await _svc.DeleteAsync(id);
             if (!success)
             {
-                IsInUse = true;
                 ModelState.AddModelError(string.Empty,
                     "Cannot delete: this category is in use.");
                 Category = await _svc.GetByIdAsync(id);
