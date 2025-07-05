@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using CategoryEntity = DAL.Entities.Category;
+using ServiceLayer.Services;
 
 namespace DangQuangTien_RazorPages.Pages.News
 {

@@ -7,6 +7,7 @@ using ServiceLayer.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using ServiceLayer.Services;
 
 namespace DangQuangTien_RazorPages.Pages.Report
 {
