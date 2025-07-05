@@ -32,6 +32,14 @@ namespace DangQuangTien_RazorPages.Pages.News
             return Page();
         }
 
+        public async Task<IActionResult> OnGetFormAsync(string id)
+        {
+            var result = await OnGetAsync(id);
+            if (result is PageResult)
+                return Partial("_DeleteFormPartial", this);
+            return result;
+        }
+
         public async Task<IActionResult> OnPostAsync()
         {
             if (string.IsNullOrWhiteSpace(Article?.NewsArticleId))
