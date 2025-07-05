@@ -31,7 +31,20 @@ builder.Services.AddScoped<INewsArticleRepository, NewsArticleRepository>();
 
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
-builder.Services.AddScoped<INewsService, NewsService>();
+builder.Services.AddScoped<INewsService>(sp =>
+{
+    var repo = sp.GetRequiredService<INewsArticleRepository>();
+    var hub = sp.GetRequiredService<IHubContext<NewsHub>>();
+
+    var svc = new NewsService(repo);
+    svc.OnArticlePublished += article =>
+        hub.Clients.All.SendAsync(
+            "ReceiveNewArticle",
+            article.NewsTitle,
+            $"/News/Details/{article.NewsArticleId}");
+
+    return svc;
+});
 
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
@@ -45,19 +58,6 @@ builder.Services.AddSingleton<NotificationService>();
 builder.Services.AddRazorPages();
 
 var app = builder.Build();
-
-using (var scope = app.Services.CreateScope())
-{
-    var newsSvc = scope.ServiceProvider.GetRequiredService<INewsService>();
-    var hubContext = scope.ServiceProvider.GetRequiredService<IHubContext<NewsHub>>();
-
-    newsSvc.OnArticlePublished += article =>
-    {
-        return hubContext.Clients.All.SendAsync("ReceiveNewArticle",
-            article.NewsTitle,
-            $"/News/Details/{article.NewsArticleId}");
-    };
-}
 
 if (!app.Environment.IsDevelopment())
 {
