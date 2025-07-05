@@ -101,6 +101,7 @@ public partial class AppDbContext : DbContext
         {
             entity.HasKey(e => e.AccountId);
 
+            // ID is generated manually in the repository
             entity.Property(e => e.AccountId)
                 .ValueGeneratedNever()
                 .HasColumnName("AccountID");

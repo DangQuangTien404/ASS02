@@ -46,6 +46,17 @@ namespace DAL.Repositories
 
         public async Task AddAsync(SystemAccount account)
         {
+            // Assign a new unique ID when the database does not auto generate it
+            if (account.AccountId == 0)
+            {
+                short nextId = 1;
+                if (_ctx.SystemAccount.Any())
+                {
+                    nextId = (short)(_ctx.SystemAccount.Max(a => a.AccountId) + 1);
+                }
+                account.AccountId = nextId;
+            }
+
             await _ctx.SystemAccount.AddAsync(account);
             await _ctx.SaveChangesAsync();
         }
