@@ -11,5 +11,6 @@ namespace ServiceLayer.Interfaces
         Task CreateAsync(Category category);
         Task UpdateAsync(Category category);
         Task<bool> DeleteAsync(short id);
+        Task<bool> IsInUseAsync(short id);
     }
 }
