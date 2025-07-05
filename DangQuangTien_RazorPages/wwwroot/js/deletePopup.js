@@ -11,7 +11,12 @@ document.addEventListener('click', function (e) {
         .then(function (r) { return r.text(); })
         .then(function (html) {
             const modalEl = document.getElementById('deleteModal');
-            modalEl.querySelector('.modal-body').innerHTML = html;
+            modalEl.querySelector('.delete-form').innerHTML = html;
+            const errorEl = modalEl.querySelector('.modal-error');
+            if (errorEl) {
+                errorEl.textContent = '';
+                errorEl.classList.add('d-none');
+            }
             const modal = new bootstrap.Modal(modalEl);
             modal.show();
         });
@@ -39,15 +44,18 @@ document.addEventListener('submit', function (e) {
         const contentType = r.headers.get('Content-Type') || '';
         if (contentType.indexOf('application/json') !== -1) {
             r.json().then(function (data) {
-                alert(data.error);
-                const modal = bootstrap.Modal.getInstance(document.getElementById('deleteModal'));
-                if (modal) modal.hide();
+                const modalEl = document.getElementById('deleteModal');
+                const errorEl = modalEl.querySelector('.modal-error');
+                if (errorEl) {
+                    errorEl.textContent = data.error;
+                    errorEl.classList.remove('d-none');
+                }
             });
             return;
         }
 
         r.text().then(function (html) {
-            document.querySelector('#deleteModal .modal-body').innerHTML = html;
+            document.querySelector('#deleteModal .delete-form').innerHTML = html;
         });
     });
 });
