@@ -14,7 +14,10 @@
     </div>
     <div class="mb-3">
         <label asp-for="Category.IsActive" class="form-label"></label>
-        <input asp-for="Category.IsActive" class="form-control" style="width: 100px; display: inline-block;" placeholder="true/false" />
+        <select asp-for="Category.IsActive" class="form-select" style="width: 100px; display: inline-block;">
+            <option value="true">Active</option>
+            <option value="false">Inactive</option>
+        </select>
         <span asp-validation-for="Category.IsActive" class="text-danger"></span>
     </div>
     <button type="submit" class="btn btn-warning">Save</button>
