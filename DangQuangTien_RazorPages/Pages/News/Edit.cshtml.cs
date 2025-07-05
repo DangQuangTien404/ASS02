@@ -1,9 +1,9 @@
-using DAL.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ServiceLayer.Interfaces;
 using ServiceLayer.Services;
+using ServiceLayer.DTOs;
 
 
 namespace DangQuangTien_RazorPages.Pages.News
@@ -24,7 +24,18 @@ namespace DangQuangTien_RazorPages.Pages.News
             if (article == null)
                 return NotFound();
 
-            Article = article;
+            Article = new UpdateNewsArticleDto
+            {
+                NewsArticleId = article.NewsArticleId,
+                NewsTitle = article.NewsTitle,
+                Headline = article.Headline,
+                NewsContent = article.NewsContent,
+                NewsSource = article.NewsSource,
+                CategoryId = article.CategoryId,
+                NewsStatus = article.NewsStatus,
+                UpdatedById = article.UpdatedById,
+                ModifiedDate = article.ModifiedDate
+            };
             SelectedTagIds = article.Tag.Select(t => t.TagId).ToList();
 
             await LoadCategoriesAndTagsAsync();

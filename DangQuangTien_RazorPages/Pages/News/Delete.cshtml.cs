@@ -1,8 +1,8 @@
-using DAL.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ServiceLayer.Interfaces;
 using ServiceLayer.Services;
+using ServiceLayer.DTOs;
 using System.Threading.Tasks;
 
 namespace DangQuangTien_RazorPages.Pages.News
@@ -18,7 +18,7 @@ namespace DangQuangTien_RazorPages.Pages.News
         }
 
         [BindProperty]
-        public NewsArticle? Article { get; set; }
+        public NewsArticleDto? Article { get; set; }
 
         public async Task<IActionResult> OnGetAsync(string id)
         {

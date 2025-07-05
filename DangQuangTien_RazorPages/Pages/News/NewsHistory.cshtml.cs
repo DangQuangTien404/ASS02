@@ -1,9 +1,9 @@
-using DAL.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ServiceLayer.Interfaces;
 using ServiceLayer.Services;
+using ServiceLayer.DTOs;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -15,7 +15,7 @@ namespace DangQuangTien_RazorPages.Pages.News
 
         public NewsHistoryModel(INewsService svc) => _svc = svc;
 
-        public IEnumerable<NewsArticle> Articles { get; set; } = new List<NewsArticle>();
+        public IEnumerable<NewsArticleDto> Articles { get; set; } = new List<NewsArticleDto>();
 
         public async Task<IActionResult> OnGetAsync()
         {

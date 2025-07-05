@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DAL.Entities;
 using ServiceLayer.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -35,7 +34,7 @@ namespace DangQuangTien_RazorPages.Pages.News
 
         public List<CategoryDto> Categories { get; private set; } = new();
 
-        public List<NewsArticle> Articles { get; private set; } = new();
+        public List<NewsArticleDto> Articles { get; private set; } = new();
 
         public bool CanEdit { get; private set; }
 
