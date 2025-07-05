@@ -29,7 +29,11 @@ namespace DangQuangTien_RazorPages.Pages.Category
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
+            {
+                if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+                    return Partial("_CreateFormPartial", this);
                 return Page();
+            }
 
             await _svc.CreateAsync(Category);
             return RedirectToPage("Index");
