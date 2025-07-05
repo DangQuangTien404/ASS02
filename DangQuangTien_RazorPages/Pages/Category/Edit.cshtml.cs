@@ -12,12 +12,13 @@ namespace DangQuangTien_RazorPages.Pages.Category
         public EditModel(ICategoryService svc) => _svc = svc;
 
         [BindProperty]
-        public CategoryEntity Category { get; set; } = null!;
+        public CategoryEntity Category { get; set; } = new();
 
         public async Task<IActionResult> OnGetAsync(short id)
         {
-            Category = await _svc.GetByIdAsync(id);
-            if (Category == null) return RedirectToPage("Index");
+            var category = await _svc.GetByIdAsync(id);
+            if (category == null) return RedirectToPage("Index");
+            Category = category;
             return Page();
         }
 

@@ -17,7 +17,7 @@ namespace DangQuangTien_RazorPages.Pages.Account
         [BindProperty(SupportsGet = true)]
         public string? SearchTerm { get; set; }
 
-        public List<SystemAccount> Accounts { get; set; }
+        public List<SystemAccount> Accounts { get; set; } = new();
 
         public IActionResult OnGet()
         {
