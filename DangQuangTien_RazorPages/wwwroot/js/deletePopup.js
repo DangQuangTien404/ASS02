@@ -12,6 +12,8 @@ document.addEventListener('click', function (e) {
         .then(function (html) {
             const modalEl = document.getElementById('deleteModal');
             modalEl.querySelector('.modal-body').innerHTML = html;
+            const inUse = modalEl.querySelector('[data-inuse]')?.getAttribute('data-inuse') === 'True';
+            modalEl.querySelector('.modal-title').textContent = inUse ? 'Warning' : 'Confirm Delete';
             const modal = new bootstrap.Modal(modalEl);
             modal.show();
         });
@@ -36,7 +38,10 @@ document.addEventListener('submit', function (e) {
             return;
         }
         return r.text().then(function (html) {
-            document.querySelector('#deleteModal .modal-body').innerHTML = html;
+            const modalEl = document.getElementById('deleteModal');
+            modalEl.querySelector('.modal-body').innerHTML = html;
+            const inUse = modalEl.querySelector('[data-inuse]')?.getAttribute('data-inuse') === 'True';
+            modalEl.querySelector('.modal-title').textContent = inUse ? 'Warning' : 'Confirm Delete';
         });
     });
 });
