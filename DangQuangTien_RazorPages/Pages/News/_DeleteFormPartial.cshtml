@@ -10,7 +10,7 @@
     <dt class="col-sm-3">Created</dt>
     <dd class="col-sm-9">@Model.Article?.CreatedDate?.ToLocalTime().ToString("g")</dd>
 </dl>
-<form method="post" data-confirm="Are you sure you want to delete this article?">
+<form method="post" asp-page="Delete" asp-route-id="@Model.Article.NewsArticleId" data-confirm="Are you sure you want to delete this article?">
     <input type="hidden" asp-for="Article.NewsArticleId" />
     <button type="submit" class="btn btn-danger">Delete</button>
 </form>

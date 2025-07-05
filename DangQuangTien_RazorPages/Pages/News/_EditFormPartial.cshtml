@@ -1,5 +1,5 @@
 @model DangQuangTien_RazorPages.Pages.News.EditModel
-<form method="post" data-confirm="Save changes to this article?">
+<form method="post" asp-page="Edit" asp-route-id="@Model.Article.NewsArticleId" data-confirm="Save changes to this article?">
     <input type="hidden" asp-for="Article.NewsArticleId" />
     <div class="mb-3">
         <label asp-for="Article.NewsTitle" class="form-label"></label>

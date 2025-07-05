@@ -14,11 +14,19 @@ namespace DangQuangTien_RazorPages.Pages.Category
         [BindProperty]
         public CategoryEntity? Category { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(short id)  
+        public async Task<IActionResult> OnGetAsync(short id)
         {
             Category = await _svc.GetByIdAsync(id);
             if (Category == null) return RedirectToPage("Index");
             return Page();
+        }
+
+        public async Task<IActionResult> OnGetFormAsync(short id)
+        {
+            var result = await OnGetAsync(id);
+            if (result is PageResult)
+                return Partial("_DeleteFormPartial", this);
+            return result;
         }
 
         public async Task<IActionResult> OnPostAsync(short id) 

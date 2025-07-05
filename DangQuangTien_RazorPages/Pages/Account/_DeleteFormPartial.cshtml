@@ -1,0 +1,11 @@
+@model DangQuangTien_RazorPages.Pages.Account.DeleteModel
+<h4>Are you sure you want to delete this account?</h4>
+<div class="mb-3">
+    <strong>Email:</strong> @Model.Account?.AccountEmail
+</div>
+<div class="mb-3">
+    <strong>Role:</strong> @(Model.Account?.AccountRole == 1 ? "Staff" : "Lecturer")
+</div>
+<form method="post" asp-page="Delete" asp-route-id="@Model.Account!.AccountId" data-confirm="Are you sure you want to delete this account?">
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>

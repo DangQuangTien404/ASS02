@@ -1,0 +1,20 @@
+@model DangQuangTien_RazorPages.Pages.Category.CreateModel
+<form method="post" asp-page="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+    <div class="mb-3">
+        <label asp-for="Category.CategoryName" class="form-label"></label>
+        <input asp-for="Category.CategoryName" class="form-control" />
+        <span asp-validation-for="Category.CategoryName" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Category.CategoryDesciption" class="form-label"></label>
+        <textarea asp-for="Category.CategoryDesciption" class="form-control"></textarea>
+        <span asp-validation-for="Category.CategoryDesciption" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Category.IsActive" class="form-label"></label>
+        <input asp-for="Category.IsActive" class="form-control" style="width: 100px; display: inline-block;" placeholder="true/false" />
+        <span asp-validation-for="Category.IsActive" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Create</button>
+</form>
