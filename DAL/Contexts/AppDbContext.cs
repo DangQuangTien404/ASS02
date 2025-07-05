@@ -32,8 +32,9 @@ public partial class AppDbContext : DbContext
                             .SetBasePath(Directory.GetCurrentDirectory())
                             .AddJsonFile("appsettings.json", true, true);
             IConfigurationRoot configuration = builder.Build();
-            string _connectionString = configuration.GetConnectionString("DefaultConnectionString");
-            optionsBuilder.UseSqlServer(_connectionString);
+            var connectionString = configuration.GetConnectionString("DefaultConnectionString");
+            if (!string.IsNullOrWhiteSpace(connectionString))
+                optionsBuilder.UseSqlServer(connectionString);
         }
     }
 
