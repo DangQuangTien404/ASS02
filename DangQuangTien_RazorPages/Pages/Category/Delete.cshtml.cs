@@ -13,20 +13,22 @@ namespace DangQuangTien_RazorPages.Pages.Category
 
         [BindProperty]
         public CategoryEntity? Category { get; set; }
+        public bool CanDelete { get; set; }
 
         public async Task<IActionResult> OnGetAsync(short id)
         {
             Category = await _svc.GetByIdAsync(id);
             if (Category == null) return RedirectToPage("Index");
+            CanDelete = !await _svc.HasArticlesAsync(id);
             return Page();
         }
 
         public async Task<IActionResult> OnGetFormAsync(short id)
         {
-            var result = await OnGetAsync(id);
-            if (result is PageResult)
-                return Partial("_DeleteFormPartial", this);
-            return result;
+            Category = await _svc.GetByIdAsync(id);
+            if (Category == null) return RedirectToPage("Index");
+            CanDelete = !await _svc.HasArticlesAsync(id);
+            return Partial("_DeleteFormPartial", this);
         }
 
         public async Task<IActionResult> OnPostAsync(short id)
