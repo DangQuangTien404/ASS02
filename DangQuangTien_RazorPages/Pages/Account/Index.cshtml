@@ -37,11 +37,8 @@
 
                 </td>
                 <td>
-                    @if (acc.AccountId != 0)
-                    {
-                        <a asp-page="Edit" asp-route-id="@acc.AccountId" class="btn btn-sm btn-warning me-1" data-popup="edit">Edit</a>
-                        <a asp-page="Delete" asp-route-id="@acc.AccountId" class="btn btn-sm btn-danger" data-popup="delete">Delete</a>
-                    }
+                    <a asp-page="Edit" asp-route-id="@acc.AccountId" class="btn btn-sm btn-warning me-1" data-popup="edit">Edit</a>
+                    <a asp-page="Delete" asp-route-id="@acc.AccountId" class="btn btn-sm btn-danger" data-popup="delete">Delete</a>
                 </td>
             </tr>
         }
