@@ -29,7 +29,7 @@ namespace DangQuangTien_RazorPages.Pages.Category
             return result;
         }
 
-        public async Task<IActionResult> OnPostAsync(short id) 
+        public async Task<IActionResult> OnPostAsync(short id)
         {
             var success = await _svc.DeleteAsync(id);
             if (!success)
@@ -37,6 +37,10 @@ namespace DangQuangTien_RazorPages.Pages.Category
                 ModelState.AddModelError(string.Empty,
                     "Cannot delete: this category is in use.");
                 Category = await _svc.GetByIdAsync(id);
+
+                if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+                    return Partial("_DeleteFormPartial", this);
+
                 return Page();
             }
             return RedirectToPage("Index");
