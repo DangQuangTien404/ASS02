@@ -10,6 +10,7 @@ namespace ServiceLayer.Interfaces
         Task<Category?> GetByIdAsync(short id);
         Task CreateAsync(Category category);
         Task UpdateAsync(Category category);
+        Task<bool> IsInUseAsync(short id);
         Task<bool> DeleteAsync(short id);
     }
 }
