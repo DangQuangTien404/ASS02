@@ -1,0 +1,28 @@
+@model DangQuangTien_RazorPages.Pages.Account.EditModel
+<form method="post" asp-page="Edit" asp-route-id="@Model.Account.AccountId" data-confirm="Save changes to this account?">
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+    <input type="hidden" asp-for="Account.AccountId" />
+    <div class="mb-3">
+        <label asp-for="Account.AccountName" class="form-label"></label>
+        <input asp-for="Account.AccountName" class="form-control" />
+        <span asp-validation-for="Account.AccountName" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Account.AccountEmail" class="form-label"></label>
+        <input asp-for="Account.AccountEmail" class="form-control" />
+        <span asp-validation-for="Account.AccountEmail" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Account.AccountPassword" class="form-label"></label>
+        <input asp-for="Account.AccountPassword" type="password" class="form-control" />
+        <span asp-validation-for="Account.AccountPassword" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Account.AccountRole" class="form-label"></label>
+        <select asp-for="Account.AccountRole" class="form-select">
+            <option value="1">Staff</option>
+            <option value="2">Lecturer</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

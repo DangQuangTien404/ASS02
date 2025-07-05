@@ -20,6 +20,12 @@ namespace DangQuangTien_RazorPages.Pages.Category
 
         public void OnGet() { }
 
+        public IActionResult OnGetForm()
+        {
+            OnGet();
+            return Partial("_CreateFormPartial", this);
+        }
+
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)

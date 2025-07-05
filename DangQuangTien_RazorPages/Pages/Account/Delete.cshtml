@@ -4,15 +4,5 @@
 
 <h2>Delete Account</h2>
 
-<h4>Are you sure you want to delete this account?</h4>
-<div class="mb-3">
-    <strong>Email:</strong> @Model.Account?.AccountEmail
-</div>
-<div class="mb-3">
-    <strong>Role:</strong> @(Model.Account?.AccountRole == 1 ? "Staff" : "Lecturer")
-</div>
-<form method="post" data-confirm="Are you sure you want to delete this account?">
-    <input type="hidden" asp-for="Account!.AccountId" />
-    <button type="submit" class="btn btn-danger">Delete</button>
-    <a asp-page="Index" class="btn btn-secondary">Cancel</a>
-</form>
+@await Html.PartialAsync("_DeleteFormPartial", Model)
+<a asp-page="Index" class="btn btn-secondary mt-2">Cancel</a>

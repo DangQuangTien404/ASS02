@@ -23,6 +23,14 @@ namespace DangQuangTien_RazorPages.Pages.Account
             return Page();
         }
 
+        public IActionResult OnGetForm()
+        {
+            var result = OnGet();
+            if (result is PageResult)
+                return Partial("_CreateFormPartial", this);
+            return result;
+        }
+
         public async Task<IActionResult> OnPostAsync()
         {
             var role = HttpContext.Session.GetInt32("AccountRole");
