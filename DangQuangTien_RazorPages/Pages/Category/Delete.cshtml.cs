@@ -18,13 +18,6 @@ namespace DangQuangTien_RazorPages.Pages.Category
         {
             Category = await _svc.GetByIdAsync(id);
             if (Category == null) return RedirectToPage("Index");
-
-            if (await _svc.IsInUseAsync(id))
-            {
-                ModelState.AddModelError(string.Empty,
-                    "Cannot delete: this category is in use.");
-            }
-
             return Page();
         }
 
