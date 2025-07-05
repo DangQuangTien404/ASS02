@@ -101,8 +101,9 @@ public partial class AppDbContext : DbContext
         {
             entity.HasKey(e => e.AccountId);
 
+            // ID is generated manually in the repository
             entity.Property(e => e.AccountId)
-                .ValueGeneratedOnAdd()
+                .ValueGeneratedNever()
                 .HasColumnName("AccountID");
             entity.Property(e => e.AccountEmail).HasMaxLength(70);
             entity.Property(e => e.AccountName).HasMaxLength(100);
