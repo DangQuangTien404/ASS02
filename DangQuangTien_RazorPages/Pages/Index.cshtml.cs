@@ -12,9 +12,15 @@ namespace DangQuangTien_RazorPages.Pages
             _logger = logger;
         }
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            var email = HttpContext.Session.GetString("AccountEmail");
+            if (string.IsNullOrEmpty(email))
+            {
+                return RedirectToPage("/Account/Login");
+            }
 
+            return Page();
         }
     }
 }
