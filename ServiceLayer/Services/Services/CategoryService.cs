@@ -43,5 +43,8 @@ namespace ServiceLayer.Services
             await _repo.SaveChangesAsync();
             return true;
         }
+
+        public Task<bool> IsInUseAsync(short id)
+            => _repo.HasArticlesAsync(id);
     }
 }
