@@ -36,14 +36,13 @@ namespace DangQuangTien_RazorPages.Pages.Account
             return result;
         }
 
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(short id)
         {
             var role = HttpContext.Session.GetInt32("AccountRole");
             if (role != 0)
                 return RedirectToPage("/Account/AccessDenied");
 
-            if (Account != null)
-                await _svc.DeleteAsync(Account.AccountId);
+            await _svc.DeleteAsync(id);
 
             return RedirectToPage("Index");
         }
