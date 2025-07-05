@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\ASS02\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|Solution Items{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\ASS02\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|Solution Items{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}|.devcontainer{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}|C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\ASS02\\devcontainer.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}|.devcontainer{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}|solutionrelative:devcontainer.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -43,6 +47,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\ASS02\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\ASS02\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-07-05T02:21:12.229Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "devcontainer.json",
               "DocumentMoniker": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\ASS02\\devcontainer.json",
               "RelativeDocumentMoniker": "devcontainer.json",
@@ -55,7 +72,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\ASS02\\DangQuangTien_RazorPages\\appsettings.json",
               "RelativeDocumentMoniker": "DangQuangTien_RazorPages\\appsettings.json",
@@ -67,7 +84,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\ASS02\\DangQuangTien_RazorPages\\Pages\\Report\\Index.cshtml.cs",
               "RelativeDocumentMoniker": "DangQuangTien_RazorPages\\Pages\\Report\\Index.cshtml.cs",
@@ -79,7 +96,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Index.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\ASS02\\DangQuangTien_RazorPages\\Pages\\News\\Index.cshtml.cs",
               "RelativeDocumentMoniker": "DangQuangTien_RazorPages\\Pages\\News\\Index.cshtml.cs",
@@ -91,7 +108,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "INewsService.cs",
               "DocumentMoniker": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\ASS02\\ServiceLayer\\Services\\Interfaces\\INewsService.cs",
               "RelativeDocumentMoniker": "ServiceLayer\\Services\\Interfaces\\INewsService.cs",
