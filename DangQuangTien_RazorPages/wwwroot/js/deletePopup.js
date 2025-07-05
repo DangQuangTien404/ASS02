@@ -35,7 +35,18 @@ document.addEventListener('submit', function (e) {
             window.location = r.url;
             return;
         }
-        return r.text().then(function (html) {
+
+        const contentType = r.headers.get('Content-Type') || '';
+        if (contentType.indexOf('application/json') !== -1) {
+            r.json().then(function (data) {
+                alert(data.error);
+                const modal = bootstrap.Modal.getInstance(document.getElementById('deleteModal'));
+                if (modal) modal.hide();
+            });
+            return;
+        }
+
+        r.text().then(function (html) {
             document.querySelector('#deleteModal .modal-body').innerHTML = html;
         });
     });
