@@ -1,0 +1,17 @@
+@model DangQuangTien_RazorPages.Pages.News.IndexModel
+@foreach (var article in Model.Articles)
+{
+    <tr>
+        <td>@article.NewsTitle</td>
+        <td>@article.Category?.CategoryName</td>
+        <td>@article.CreatedDate?.ToString("g")</td>
+        <td>@(article.NewsStatus == true ? "Active" : "Inactive")</td>
+        @if (Model.CanEdit)
+        {
+            <td>
+                <a asp-page="Edit" asp-route-id="@article.NewsArticleId" class="btn btn-warning btn-sm" data-popup="edit">Edit</a>
+                <a asp-page="Delete" asp-route-id="@article.NewsArticleId" class="btn btn-danger btn-sm" data-popup="delete">Delete</a>
+            </td>
+        }
+    </tr>
+}

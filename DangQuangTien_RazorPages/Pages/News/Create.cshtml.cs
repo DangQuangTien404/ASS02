@@ -43,6 +43,12 @@ namespace DangQuangTien_RazorPages.Pages.News
             AllTags = (await _news.GetAllTagsAsync()).ToList();
         }
 
+        public async Task<IActionResult> OnGetFormAsync()
+        {
+            await OnGetAsync();
+            return Partial("_CreateFormPartial", this);
+        }
+
         public async Task<IActionResult> OnPostAsync()
         {
 
