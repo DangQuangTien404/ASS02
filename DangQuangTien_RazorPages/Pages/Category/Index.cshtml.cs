@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using DAL.Entities;
+using ServiceLayer.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ServiceLayer.Interfaces;
@@ -16,8 +16,8 @@ namespace DangQuangTien_RazorPages.Pages.Category
         [BindProperty(SupportsGet = true)]
         public string? SearchTerm { get; set; }
 
-        public IEnumerable<DAL.Entities.Category> Categories { get; set; }
-            = new List<DAL.Entities.Category>();
+        public IEnumerable<CategoryDto> Categories { get; set; }
+            = new List<CategoryDto>();
 
         public int? UserRole { get; private set; }
 

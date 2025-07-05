@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ServiceLayer.Interfaces;
 using ServiceLayer.Services;
+using ServiceLayer.DTOs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace DangQuangTien_RazorPages.Pages.News
         protected readonly NotificationService _notificationService;
 
         [BindProperty]
-        public NewsArticle Article { get; set; } = new();
+        public UpdateNewsArticleDto Article { get; set; } = new();
 
         [BindProperty]
         public List<int> SelectedTagIds { get; set; } = new();

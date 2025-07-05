@@ -2,12 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DAL.Entities;
 using ServiceLayer.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ServiceLayer.Services;
+using ServiceLayer.DTOs;
 
 namespace DangQuangTien_RazorPages.Pages.Report
 {
@@ -26,7 +26,7 @@ namespace DangQuangTien_RazorPages.Pages.Report
         [BindProperty(SupportsGet = true)]
         public DateTime? EndDate { get; set; }
 
-        public List<NewsArticle> NewsStats { get; set; } = new();
+        public List<NewsArticleDto> NewsStats { get; set; } = new();
 
         public async Task<IActionResult> OnGetAsync()
         {

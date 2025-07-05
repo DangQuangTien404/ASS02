@@ -2,8 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ServiceLayer.Interfaces;
-
-using CategoryEntity = DAL.Entities.Category;
+using ServiceLayer.DTOs;
 
 namespace DangQuangTien_RazorPages.Pages.Category
 {
@@ -13,9 +12,10 @@ namespace DangQuangTien_RazorPages.Pages.Category
         public CreateModel(ICategoryService svc) => _svc = svc;
 
         [BindProperty]
-        public CategoryEntity Category { get; set; } = new CategoryEntity
+        public CreateCategoryDto Category { get; set; } = new()
         {
-            IsActive = true
+            CategoryName = string.Empty,
+            CategoryDesciption = string.Empty
         };
 
         public void OnGet() { }

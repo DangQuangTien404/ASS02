@@ -1,4 +1,4 @@
-﻿using DAL.Entities;
+﻿using ServiceLayer.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -39,13 +39,26 @@ namespace DangQuangTien_RazorPages.Pages.News
                 return Page();
             }
 
-            Article.NewsArticleId = Guid.NewGuid().ToString("N")[..20]; 
+            Article.NewsArticleId = Guid.NewGuid().ToString("N")[..20];
             Article.CreatedById = (short)accountId;
             Article.CreatedDate = DateTime.UtcNow;
             Article.NewsStatus = true;
             Article.Headline ??= Article.NewsTitle ?? "Untitled";
 
-            await _news.CreateAsync(Article, SelectedTagIds);
+            var dto = new CreateNewsArticleDto
+            {
+                NewsArticleId = Article.NewsArticleId,
+                NewsTitle = Article.NewsTitle,
+                Headline = Article.Headline,
+                CreatedDate = Article.CreatedDate,
+                NewsContent = Article.NewsContent,
+                NewsSource = Article.NewsSource,
+                CategoryId = Article.CategoryId,
+                NewsStatus = Article.NewsStatus,
+                CreatedById = Article.CreatedById
+            };
+
+            await _news.CreateAsync(dto, SelectedTagIds);
 
             await _notificationService.NotifyAsync();
 

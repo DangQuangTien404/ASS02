@@ -1,13 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DAL.Entities;
 using ServiceLayer.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using CategoryEntity = DAL.Entities.Category;
+using ServiceLayer.DTOs;
 using ServiceLayer.Services;
 
 namespace DangQuangTien_RazorPages.Pages.News
@@ -33,9 +32,9 @@ namespace DangQuangTien_RazorPages.Pages.News
         [BindProperty(SupportsGet = true)]
         public int? SelectedCategoryId { get; set; }
 
-        public List<CategoryEntity> Categories { get; private set; } = new();
+        public List<CategoryDto> Categories { get; private set; } = new();
 
-        public List<NewsArticle> Articles { get; private set; } = new();
+        public List<NewsArticleDto> Articles { get; private set; } = new();
 
         public bool CanEdit { get; private set; }
 
