@@ -1,12 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\ASS02\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{EC5FA743-7A84-4E98-AD65-E7EB8FD078FE}|DangQuangTien_RazorPages\\DangQuangTien_RazorPages.csproj|c:\\users\\hiii\\desktop\\code\\prn222\\ass02\\dangquangtien_razorpages\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{EC5FA743-7A84-4E98-AD65-E7EB8FD078FE}|DangQuangTien_RazorPages\\DangQuangTien_RazorPages.csproj|solutionrelative:dangquangtien_razorpages\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -23,19 +18,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\ASS02\\DangQuangTien_RazorPages\\appsettings.json",
-              "RelativeDocumentMoniker": "DangQuangTien_RazorPages\\appsettings.json",
-              "ToolTip": "C:\\Users\\Hiii\\Desktop\\CODE\\PRN222\\ASS02\\DangQuangTien_RazorPages\\appsettings.json",
-              "RelativeToolTip": "DangQuangTien_RazorPages\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-05T05:07:25.831Z",
-              "EditorCaption": ""
             }
           ]
         }
