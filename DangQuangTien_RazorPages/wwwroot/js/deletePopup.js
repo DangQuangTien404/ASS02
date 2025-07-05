@@ -1,18 +1,18 @@
 // Load the delete confirmation via AJAX and display inside a Bootstrap modal
 
-document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('a[data-popup="delete"]').forEach(function (link) {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-            var url = link.getAttribute('href') + '?handler=Form';
-            fetch(url, { headers: { 'X-Requested-With': 'XMLHttpRequest' } })
-                .then(function (r) { return r.text(); })
-                .then(function (html) {
-                    var modalEl = document.getElementById('deleteModal');
-                    modalEl.querySelector('.modal-content').innerHTML = html;
-                    var modal = new bootstrap.Modal(modalEl);
-                    modal.show();
-                });
+document.addEventListener('click', function (e) {
+    const link = e.target.closest('a[data-popup="delete"]');
+    if (!link) return;
+
+    e.preventDefault();
+    const url = link.getAttribute('href') + '?handler=Form';
+
+    fetch(url, { headers: { 'X-Requested-With': 'XMLHttpRequest' } })
+        .then(function (r) { return r.text(); })
+        .then(function (html) {
+            const modalEl = document.getElementById('deleteModal');
+            modalEl.querySelector('.modal-content').innerHTML = html;
+            const modal = new bootstrap.Modal(modalEl);
+            modal.show();
         });
-    });
 });

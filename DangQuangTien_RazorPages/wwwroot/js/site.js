@@ -4,21 +4,23 @@
 // Write your JavaScript code.
 
 // Generic confirmation handler for links and forms
-document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('[data-confirm]').forEach(function (el) {
-        var msg = el.getAttribute('data-confirm');
-        if (el.tagName === 'FORM') {
-            el.addEventListener('submit', function (e) {
-                if (!confirm(msg)) {
-                    e.preventDefault();
-                }
-            });
-        } else {
-            el.addEventListener('click', function (e) {
-                if (!confirm(msg)) {
-                    e.preventDefault();
-                }
-            });
-        }
-    });
+
+document.addEventListener('click', function (e) {
+    const target = e.target.closest('[data-confirm]');
+    if (!target || target.tagName === 'FORM') return;
+
+    const msg = target.getAttribute('data-confirm');
+    if (!confirm(msg)) {
+        e.preventDefault();
+    }
+});
+
+document.addEventListener('submit', function (e) {
+    const form = e.target.closest('form[data-confirm]');
+    if (!form) return;
+
+    const msg = form.getAttribute('data-confirm');
+    if (!confirm(msg)) {
+        e.preventDefault();
+    }
 });
