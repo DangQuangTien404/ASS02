@@ -71,6 +71,11 @@ namespace DangQuangTien_RazorPages.Pages.News
             if (role != 1)
             {
                 this.OnlyActive = true;
+                CanEdit = false;
+            }
+            else
+            {
+                CanEdit = true;
             }
 
             await LoadArticles();
