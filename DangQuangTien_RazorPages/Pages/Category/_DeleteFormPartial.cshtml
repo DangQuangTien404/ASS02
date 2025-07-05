@@ -1,9 +1,9 @@
 @model DangQuangTien_RazorPages.Pages.Category.DeleteModel
 <div class="mb-3">
     <p>
-        @(ViewData.ModelState.IsValid
-            ? "Are you sure you want to delete:" 
-            : "Cannot delete: this category is in use.")
+        @(Model.IsInUse
+            ? "Cannot delete: this category is in use."
+            : "Are you sure you want to delete:")
     </p>
     <dl class="row">
         <dt class="col-sm-2">Name</dt>
@@ -12,18 +12,15 @@
         <dd class="col-sm-10">@Model.Category?.CategoryDesciption</dd>
     </dl>
 </div>
-@if (ViewData.ModelState.IsValid)
+@if (!Model.IsInUse)
 {
     <form method="post" asp-page="Delete" asp-route-id="@Model.Category?.CategoryId">
         <button type="submit" class="btn btn-danger">Delete</button>
     </form>
 }
-@if (!ViewData.ModelState.IsValid)
+@if (Model.IsInUse)
 {
     <div class="text-danger mt-3">
-        @foreach (var err in ViewData.ModelState[string.Empty].Errors)
-        {
-            <p>@err.ErrorMessage</p>
-        }
+        Cannot delete: this category is in use.
     </div>
 }
