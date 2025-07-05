@@ -34,15 +34,18 @@ namespace DangQuangTien_RazorPages.Pages.Category
             var success = await _svc.DeleteAsync(id);
             if (!success)
             {
-                ModelState.AddModelError(string.Empty,
-                    "Cannot delete: this category is in use.");
+                const string msg =
+                    "This category cannot be deleted because it is currently used in one or more news articles.";
+
                 Category = await _svc.GetByIdAsync(id);
 
                 if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
-                    return Partial("_DeleteFormPartial", this);
+                    return new JsonResult(new { error = msg });
 
+                ModelState.AddModelError(string.Empty, msg);
                 return Page();
             }
+
             return RedirectToPage("Index");
         }
     }
